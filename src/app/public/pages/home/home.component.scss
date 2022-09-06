@@ -13,11 +13,10 @@ h1{
     font-size: 80px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     position: fixed;
-    top: 10%;
+    top: 25%;
     left: 25.5%;
 
 }
-
 #registrar{
     background-color: #7C88FF;
     width: 300px;
@@ -25,8 +24,21 @@ h1{
     color: #FFFFFF;
     font-family: Rubik;
     position: fixed;
-    top: 35%;
-    left: 40%;
+    top: 50%;
+    left: 25%;
+    font-size: 45px;
+    border-radius: 15px;
+    border: none;
+}
+#iniciar{
+    background-color: #7C88FF;
+    width: 300px;
+    height: 80px;
+    color: #FFFFFF;
+    font-family: Rubik;
+    position: fixed;
+    top: 50%;
+    left: 55%;
     font-size: 45px;
     border-radius: 15px;
     border: none;
@@ -37,6 +49,12 @@ h1{
     color: #7C88FF;
     transition: 300ms; 
 }
+#iniciar:hover{
+    background-color: #ECF4F7;
+    color: #7C88FF;
+    transition: 300ms; 
+}
+
 
 #abajo{
     position: fixed;
