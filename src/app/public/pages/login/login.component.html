@@ -1,13 +1,20 @@
-<div id="container">
-    <h1>Agenda de contactos</h1>
-        <button id = "login" [routerLink] = "['/login']">Iniciar Sesion</button>   
-        <div id = bloqueLogin>
-            <input id = "usuario" type= search name="usuario" placeholder="Usuario:">
-            <input id = "contraseña" type= search name="contraseña" placeholder="Contraseña:">
-            <p>o</p>
-            <img src="https://medi-login.com/wp-content/uploads/2022/03/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png">
-        </div>
+
+<body>
+    <div class="agenda"><strong>Agenda de Contactos</strong></div>
+    <div class="formulario">
+        <h1>Inicio de sesion</h1>
+        <form method="post">
+            <div class="username">
+                <input type="text" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="contraseña">
+                <input type="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="recordar">Olvide mi contraseña</div>
+            <input type="submit" value="Iniciar Sesion">
+            <div class="bottom"></div>
+        </form>
     </div>
-<div id ="abajo"></div>
-
-
+</body>
