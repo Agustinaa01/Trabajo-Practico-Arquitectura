@@ -1,7 +1,16 @@
 <body>
+<div>
     <h1>Contactos</h1>
-    <input type="search" id="site-search" name="q">
-    <button [routerLink]="['/login']" id="btn-cs">Cerrar Sesion</button>
-    <button id="btnx">+</button>
-    <div id ="abajo"></div>
+    <input class= "submit" [routerLink] = "['/login']" type="submit" value="Cerrar Sesion">
+    <input class= "buscar" type="search" name = "Buscar" placeholder= "Buscar">
+    <div id="contactos">
+        <img src="https://i.pinimg.com/736x/b3/b8/57/b3b85713a822ad3e2c5e1eb74af91554.jpg"/>
+        <h2>Nombre de contacto
+            <img id = "puntos" src="https://cdn-icons-png.flaticon.com/512/61/61140.png" />
+        </h2>
+        <p>
+            Numero: 341-6987456 
+        </p>    
+    </div>
+</div>
 </body>
