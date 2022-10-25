@@ -1,9 +1,9 @@
 #container{
-    background-color: #FFFF;
+    display: flex;
+    background-color: #c1c6ff;
     border-radius: 10px;
     text-align: center;
     line-height: 0.3;
-    position: fixed;
     top: 20%;
     left: 2%;
     cursor: pointer;
@@ -15,3 +15,6 @@
     transition: 300ms; 
 }
 
+p{
+    text-indent: 10px;
+}

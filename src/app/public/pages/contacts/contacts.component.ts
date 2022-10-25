@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from 'src/app/core/interfaces/contacts';
+import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
 import { ContactService } from 'src/app/core/services/contact.service';
-import { contactosFalsos } from 'src/assets/FakeContacts';
+
 
 @Component({
   selector: 'app-contacts',
@@ -10,17 +10,15 @@ import { contactosFalsos } from 'src/assets/FakeContacts';
 })
 export class ContactsComponent implements OnInit {
 
+  contactsData:ContactJsonPlaceHolder[] = [];
+
   constructor(private cs:ContactService) { }
 
-  listaContactos:Contact[] = contactosFalsos;
-
-  async ngOnInit() {
-      this.listaContactos = await this.buscarContactos();
-      console.log(this.listaContactos)
+  ngOnInit(): void {
+    this.getData()
   }
 
-  async buscarContactos(){
-    return await this.cs.getContacts();
+  async getData(){
+    this.contactsData = await this.cs.getContacts();
   }
-
 }

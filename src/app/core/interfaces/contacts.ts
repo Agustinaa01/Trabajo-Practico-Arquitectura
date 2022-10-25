@@ -4,16 +4,12 @@ export interface Contact {
     celularNumber?: string,
 }
 
-export const defaultContact:Contact = {
-    name: "First name",
-    lastname: "Last Name",
-    celularNumber: "+5412345678",
+export interface ContactJsonPlaceHolder{
+    id?: number,
+    name?: string,
+    celularNumber?: string,
+    telephoneNumber?: string,
+    description?: string,
+    userId?: string,
+    phone?: string
 }
-
-
-export interface ContactJsonPlaceholder {
-    name?: string;
-    lastname: string;
-    username?: string;
-}
-
