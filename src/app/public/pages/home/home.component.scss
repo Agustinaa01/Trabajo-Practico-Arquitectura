@@ -19,17 +19,23 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
 }
 
 .submit{
     width: 140%;
     height: 120px;
-    border: 10px solid#E3E5F9;
-    background: #7C88FF;
+    background-color: #7C88FF;
     font-size: 60px;
     color: #ECF4F7;
     border-radius: 40px;
     cursor: pointer;
-    outline: none;
+    margin: 0.2em;
+    border:none;
 }
+
+.submit:hover{
+    background-color: #ECF4F7;
+    color: #7C88FF;
+    transition: 100ms; 
+}
+
