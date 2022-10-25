@@ -4,7 +4,10 @@
     <input class= "submit" [routerLink] = "['/login']" type="submit" value="Cerrar Sesion">
     <input class= "buscar" type="search" name = "Buscar" placeholder= "Buscar">
     <main id="contactos">
-        <app-contact-card>
+        <app-contact-card
+            *ngFor="let contact of contactsData"
+            [contact]="contact"
+            >
         </app-contact-card>
     </main>
 </body>

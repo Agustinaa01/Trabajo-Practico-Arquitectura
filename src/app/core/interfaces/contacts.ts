@@ -11,5 +11,6 @@ export interface ContactJsonPlaceHolder{
     celularNumber?: string,
     telephoneNumber?: string,
     description?: string,
-    userId?: string
+    userId?: string,
+    phone?: string
 }

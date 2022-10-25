@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ContactJsonPlaceHolder } from '../interfaces/contacts';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,9 @@ import { Injectable } from '@angular/core';
 export class ContactService {
 
   constructor() { }
+
+  async getContacts(): Promise<ContactJsonPlaceHolder[]> {
+    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+    return await data.json();
+  }
 }
