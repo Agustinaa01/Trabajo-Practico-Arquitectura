@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ContactJsonPlaceHolder } from '../interfaces/contacts';
 
 import { BACKEND_URL } from '../constants/backend';
-import { Contact, ContactJsonPlaceholder } from '../interfaces/contacts';
 import { AuthService } from './auth.service';
 
 @Injectable({
