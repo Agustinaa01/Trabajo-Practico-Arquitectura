@@ -144,8 +144,9 @@ body{
     outline: none;
 }
 .submit:hover{
-    border-color: #fff;
-    transition: .5s;
+    background-color: #fff;
+    color: #7C88FF;
+    transition: 250ms;
 }
 .bottom{
     margin: 30px 0;
