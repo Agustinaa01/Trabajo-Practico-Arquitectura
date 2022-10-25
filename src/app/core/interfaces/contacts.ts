@@ -1,8 +1,7 @@
-export interface Contact{
+export interface Contact {
     name: string,
-    celularNumber: string,
-    telephoneNumber: string,
-    description: string
+    lastname: string
+    celularNumber?: string,
 }
 
 export interface ContactJsonPlaceHolder{
