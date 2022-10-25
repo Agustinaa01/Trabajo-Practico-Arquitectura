@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/app/core/interfaces/contacts';
+import { ContactService } from 'src/app/core/services/contact.service';
+import { contactosFalsos } from 'src/assets/FakeContacts';
 
 @Component({
   selector: 'app-contacts',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cs:ContactService) { }
 
-  ngOnInit(): void {
+  listaContactos:Contact[] = contactosFalsos;
+
+  async ngOnInit() {
+      this.listaContactos = await this.buscarContactos();
+      console.log(this.listaContactos)
+  }
+
+  async buscarContactos(){
+    return await this.cs.getContacts();
   }
 
 }

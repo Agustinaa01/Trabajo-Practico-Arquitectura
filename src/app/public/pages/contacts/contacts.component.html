@@ -1,10 +1,12 @@
 
+<!-- <app-FakeContacts ></app-FakeContacts> -->
 <body>
 <div>
     <h1>Contactos</h1>
     <input class= "submit" [routerLink] = "['/login']" type="submit" value="Cerrar Sesion">
     <input class= "buscar" type="search" name = "Buscar" placeholder= "Buscar">
     <div id="contactos">
+    <!-- <app-FakeContacts *ngFor="let contact of contactosFalsos" [contact]="contact"></app-FakeContacts> -->
         <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png"/>
         <h2>Nombre de contacto
             <img id = "puntos" src="https://cdn-icons-png.flaticon.com/512/61/61140.png" />
