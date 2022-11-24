@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ContactsRoutingModule } from './contacts-routing.module';
-import { ContactsComponent } from './contacts.component';
-import { ContactCardComponent } from '../../components/contact-card/contact-card.component';
-
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { ContactCardComponent } from "../../components/contact-card.component";
+import { PopUpComponent } from "../addcontact/pop-up.component";
+import { ContactsRoutingModule } from "./contacts-routing.module";
+import { ContactsComponent } from "./contacts.component";
 
 @NgModule({
   declarations: [
     ContactsComponent,
-    ContactCardComponent
+    ContactCardComponent,
+    PopUpComponent
   ],
   imports: [
     CommonModule,

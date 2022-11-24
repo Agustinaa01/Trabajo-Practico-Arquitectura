@@ -1,0 +1,22 @@
+<body>
+    <div class="card-content">
+        <div class="image">
+            <img src={{contacto.avatar}}>
+        </div>
+        <div class="info">
+            <span class="name">{{contacto.name}} {{contacto.last_name}} ({{contacto.alias}})</span>
+            <span class="descripcion">{{contacto.description}}</span>
+            <span class="phone">{{contacto.celularNumber}}</span>
+            <span class="email">{{contacto.email}}</span>
+        </div>
+            
+        <div class="interaction">
+            <input class="editar" type="image" src="https://cdn-icons-png.flaticon.com/512/25/25453.png">
+            <input class="mensaje" type="image" src="https://cdn-icons-png.flaticon.com/512/520/520648.png">
+            <input class="videollamada" type="image" src="https://img.icons8.com/ios/500/video-call.png">
+            <input class="editar"[routerLink] = "['/infocontacts']" type="image" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
+            <input class="eliminar" [routerLink] = "['/deletecontact']" type="image" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png">
+            <input class="grupo" [routerLink] = "['/grupo']" type="image" src="https://cdn-icons-png.flaticon.com/512/545/545647.png">
+        </div>
+        </div>
+    </body>

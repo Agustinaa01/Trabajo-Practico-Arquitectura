@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
+import { Contact } from 'src/app/core/interfaces/contacts';
 
 @Component({
   selector: 'app-contact-card',
@@ -7,12 +7,12 @@ import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
   styleUrls: ['./contact-card.component.scss']
 })
 export class ContactCardComponent implements OnInit {
-
+Contactos: any;
   constructor() { }
 
-  @Input() contact:ContactJsonPlaceHolder = {};
+  @Input() contacto:Contact = {} as Contact;
+
 
   ngOnInit(): void {
   }
-
 }
