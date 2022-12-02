@@ -12,14 +12,15 @@ export class AuthService {
   private loggedIn: boolean = false;
 
   async login(authentication:iAuthRequest): Promise<boolean> {
-    const res = await fetch(BACKEND_URL + '/api/authentication/authenticate', {
+    const res = await fetch('https://localhost:7108/api/authentication/authenticate' , {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(authentication),
     });
-    if(!res.ok) return false
-    const token = await res.text;
+    if(!res.ok) return false   
+    const token = await res.text();
     console.log(token)
+
     if (!token) return false;
     this.setSession(token);
     return true;

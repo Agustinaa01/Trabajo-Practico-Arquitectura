@@ -8,49 +8,48 @@ import { AuthService } from './auth.service';
 })
 export class ContactService {
   
-constructor(private auth:AuthService) {}
+constructor() {}
 
-  async getContactDetails(id: number): Promise<Contact> {
-    const jsonData = await this.getContacts();
-    const contact = jsonData.filter((contact) => contact.id == id);
-    return contact.length > 0 ? contact[0] : {};
+  async getUserDetails(id: number) 
+  {
+  console.log("ok")
   }
 
-  async getContacts(): Promise<Contact[]> {
-    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+  async getContacts(): Promise<Contact[]>  {
+    const data = await fetch('https://localhost:7108/api/Contacts');
     return await data.json();
   }
-
-  async editContact(contact: Contact) {
-    console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contact', {
+  async getContact(id: number): Promise<Contact[]>  {
+    const data = await fetch('https://localhost:7108/api/Contacts/'+id);
+    return await data.json();
+  }
+  async UpdateContact(c: Contact): Promise<Contact>  {
+    const res = await fetch('https://localhost:7108/api/Contacts/', {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(contact),
+      body: JSON.stringify(c)
     });
-    return await res.json();
+    return res.json();
   }
 
-  async addContact(contact: Contact){
-    console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contact', {
+  async AddContact(c: Contact): Promise<Contact>  {
+    const res = await fetch('https://localhost:7108/api/Contacts', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(contact),
+      body: JSON.stringify(c)
     });
-    return await res.json();
+    return res.json();
   }
 
-  async deleteContact(id:number):Promise<boolean>{
-    const res = await fetch(BACKEND_URL+'/api/Contact'+id, {
-      method: 'POST',
+  async deleteContact(id: number): Promise<boolean>  {
+    const res = await fetch('https://localhost:7108/api/Contacts/'+id, {
+      method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
-        'Authentication' : this.auth.getSession().token!
       },
     });
     return res.ok;

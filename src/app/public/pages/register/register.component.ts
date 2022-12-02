@@ -16,7 +16,8 @@ export class RegisterComponent{
   //Hecho usando NgModel
   authData:iAuthRequest = {
     userName : "",
-    password : ""
+    password : "",
+
   };
 
 
