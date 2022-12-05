@@ -1,0 +1,34 @@
+<body> 
+    <div id = "editar">
+        <img id= "usuario" src="https://cdn-icons-png.flaticon.com/512/456/456212.png">
+        <h5>Agregar Imagen</h5>
+    
+        <form (ngSubmit)="editcontact(contactEdit.id!,form)" #form="ngForm" id="agregar-form">
+            <div>
+                <input type="text" id="nombre" name="Nombre" placeholder="Name" required=""
+                [(ngModel)]="contactEdit.Name" #name="ngModel" [maxlength]="15">
+            </div>
+            <div>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido"
+                [(ngModel)]="contactEdit.LastName" #lastname="ngModel" [maxlength]="15">
+            </div>
+            <div>
+                <input type="text" id="alias" name="alias" placeholder="Alias"
+                [(ngModel)]="contactEdit.Alias" #alias="ngModel" [maxlength]="15">
+                
+            </div>
+            <div>
+                <input type="text" id="celular" name="celular" placeholder="Celular" required
+                [(ngModel)]="contactEdit.CelularNumber" #celular="ngModel" [maxlength]="15">
+            </div>
+            <div>
+                <input type="text" id="email" name="email" placeholder="Email"
+                [(ngModel)]="contactEdit.Email" #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">>
+            </div>
+            <p class="botones">
+                <button class="submit" type="submit">Agregar Contacto</button>
+                <button class="submit"type="submit">Cancelar</button>
+            </p>
+        </form>
+    </div>
+</body>
