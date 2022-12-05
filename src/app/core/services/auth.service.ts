@@ -12,7 +12,7 @@ export class AuthService {
   private loggedIn: boolean = false;
 
   async login(authentication:iAuthRequest): Promise<boolean> {
-    const res = await fetch('https://localhost:7108/api/authentication/authenticate' , {
+    const res = await fetch(BACKEND_URL + '/api/authentication/authenticate', {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(authentication),
@@ -41,7 +41,7 @@ export class AuthService {
 
   setSession(token: any, expiresTimeHours: number = 24) {
     const date = new Date();
-    date.setHours(date.getHours() + expiresTimeHours);
+    date.setHours(date.getHours() + expiresTimeHours); //la hora actual+la cantidad de horas validas del token
 
     const session: ISession = {
       expiresIn: new Date(date).toISOString(),

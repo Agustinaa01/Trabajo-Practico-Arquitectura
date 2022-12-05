@@ -1,12 +1,12 @@
 export interface IUser{
-  name?: string;
-  lastName?: string;
-  password?: string;
-  userName: string;
+  // Name?: string;
+  // LastName?: string;
+  Password?: string;
+  UserName: string;
 }
 
-export const defaultUser = {
-  id: "User ID",
-  username: "Username",
-  role: "CLIENT"
-}
+// export const defaultUser = {
+//   id: "User ID",
+//   username: "Username",
+//   role: "CLIENT"
+// }
