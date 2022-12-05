@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'grupo',
     loadChildren: () => import('./public/pages/grupo/grupo.module').then(m => m.GrupoModule)
   },
+  {
+    path: 'editcontact',
+    loadChildren: () => import('./public/pages/editcontact/editcontact.module').then(m => m.EditcontactModule)
+  },
 ];
 
 @NgModule({

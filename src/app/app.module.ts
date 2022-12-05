@@ -9,7 +9,7 @@ import { EditcontactComponent } from './public/pages/editcontact/editcontact.com
 @NgModule({
   declarations: [
     AppComponent,
-    EditcontactComponent,
+
   ],
   imports: [
     BrowserModule,
