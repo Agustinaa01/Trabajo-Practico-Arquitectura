@@ -1,26 +1,16 @@
-
 body {
     font-size: 1rem;
 }
-#usuario{
-    border: 2px solid black;
-    border-radius: 500px;
-    margin: 2px;
-    width: 50px;
-    height: 50px;
-}
-h5{
-    font-size: 12px;
-    margin: -3px;
-}
-p{
-    position: relative;
-}
 
+h5{
+    font-size: 40px;
+    margin:20px;
+    text-align: center;
+}
 #agregar {
     background-color: #ffff;
+    margin: 80px auto;
     width: 35%;
-    margin: 30px auto;
     text-align: center;
     padding: 2px 0 0 0;
     border-radius: 4px;
@@ -29,14 +19,15 @@ p{
   
 #agregar-form {
     padding: 0px 50px;
-    height: 525px;
+    height: 500px;
 }
   
-input {
+#agregar-form input {
     display: block;
     box-sizing: border-box;
     width: 100%;
     outline: none;
+    margin-bottom: 10px;
     height: 60px;
     line-height: 60px;
     border-radius: 4px;
@@ -46,12 +37,8 @@ input[type="text"] {
     width: 100%;
     padding: 0 0 0 10px;
     margin: 0;
-    //color: #8a8b8e;
     border: 1px solid #7C88FF;
     font-size: 16px;
-    // -webkit-appearance: none;
-    // -moz-appearance: none;
-    // appearance: none;
     position: relative;
     display: inline-block;
     background: none;
@@ -64,16 +51,17 @@ input[type="text"] {
 #agregar-form .submit {
     width: 80%;
     height: 50px;
-    border: 1px solid;
+    border: 1px none;
+    margin: 5px;
     background: #7C88FF;
     font-size :20px;
     color:#fff;
     border-radius: 25px;
     cursor: pointer;
-    outline: none;
     text-align: center;
     align-items: center;
     justify-content: center;
+
 }
 #agregar-form .submit:hover{
     border: 1px solid #7C88FF;

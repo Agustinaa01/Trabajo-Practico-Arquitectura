@@ -15,8 +15,8 @@ export class LoginComponent {
 
   //Hecho usando NgModel
   authData:iAuthRequest = {
-    userName : "",
-    password : ""
+    UserName : "",
+    Password : ""
   };
 
 

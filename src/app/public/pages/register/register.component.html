@@ -9,13 +9,17 @@
       <div class="username">
       <!-- <label for="username">Nombre de Usuario</label> -->
       <input type="userName" name="userName" placeholder="Nombre"
-       [(ngModel)]="authData.userName" [required]="true" #userName="ngModel"
+       [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel"
       >
     </div>
-    
+    <div class="email">
+    <input type="text" id="email" name="email" placeholder="Email"
+    [(ngModel)]="authData.Email"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+  </div>
+  
     <div class="contraseña">
       <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
-        [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel"
+        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel"
       >
     </div>
     <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>

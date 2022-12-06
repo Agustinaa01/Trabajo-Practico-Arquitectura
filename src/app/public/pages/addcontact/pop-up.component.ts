@@ -18,7 +18,8 @@ export class PopUpComponent implements OnInit {
     Alias: '',
     LastName: '',
     CelularNumber: '',
-    Email: ''
+    Email: '',
+    TelephoneNumber: ""
   };
   ngOnInit(): void {
   }

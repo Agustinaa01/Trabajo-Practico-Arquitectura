@@ -19,14 +19,15 @@ export class EditcontactComponent implements OnInit {
     Alias: '',
     LastName: '',
     CelularNumber: '',
-    Email: ''
+    Email: '',
+    TelephoneNumber: ''
   }
 
   async getContacto(id:number){  //recibe el id de un contacto
     const contacto = this.cs.getContactDetails(id); //trae un objeto contacto con todos sus datos
     return await contacto
   }
-  async contactForEditData(id: number){
+  async contactForEdit(id: number){
     const contactForEdit = this.getContacto(id)  //ejecuta getContacto() con el id del contacto que va a ser editado
 
     this.contactEdit.id = (await contactForEdit).id;           //reemplaza todos los valores del contactForeditData con los del contacto buscado
@@ -34,7 +35,8 @@ export class EditcontactComponent implements OnInit {
     this.contactEdit.LastName = (await contactForEdit).LastName,
     this.contactEdit.Alias = (await contactForEdit).Alias,
     this.contactEdit.Email = (await contactForEdit).Email,
-    this.contactEdit.CelularNumber = (await contactForEdit).CelularNumber
+    this.contactEdit.CelularNumber = (await contactForEdit).CelularNumber,
+    this.contactEdit.TelephoneNumber = (await contactForEdit).TelephoneNumber
   }
 
   async editcontact(id:number, form:NgForm){

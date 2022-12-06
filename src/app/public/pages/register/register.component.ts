@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { iAuthRequest } from 'src/app/core/interfaces/auth';
+import { iAuthRequest, iRegisterRequest } from 'src/app/core/interfaces/auth';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -14,10 +14,10 @@ export class RegisterComponent{
   constructor(private auth:AuthService, private router:Router) { }
 
   //Hecho usando NgModel
-  authData:iAuthRequest = {
-    userName : "",
-    password : "",
-
+  authData:iRegisterRequest = {
+    UserName: "",
+    Password: "",
+    Email: ''
   };
 
 

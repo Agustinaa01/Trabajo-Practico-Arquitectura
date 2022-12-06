@@ -1,33 +1,29 @@
 <body> 
     <div id = "agregar">
-        <img id= "usuario" src="https://cdn-icons-png.flaticon.com/512/456/456212.png">
-        <h5>Agregar Imagen</h5>
-    
+        <h5>Agregar Contacto</h5>
         <form (ngSubmit)="newcontact(form)" #form="ngForm" id="agregar-form">
-            <div>
-                <input type="text" id="nombre" name="Nombre" placeholder="Name" required=""
-                [(ngModel)]="contactData.Name" #name="ngModel" [maxlength]="15">
-            </div>
-            <div>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido"
-                [(ngModel)]="contactData.LastName" #lastname="ngModel" [maxlength]="15">
-            </div>
-            <div>
-                <input type="text" id="alias" name="alias" placeholder="Alias"
-                [(ngModel)]="contactData.Alias" #alias="ngModel" [maxlength]="15">
+            <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required=""
+            [(ngModel)]="contactData.Name" #name="ngModel" [maxlength]="15">
+ 
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido"
+            [(ngModel)]="contactData.LastName" #lastname="ngModel" [maxlength]="15">
+
+            <input type="text" id="alias" name="alias" placeholder="Alias"
+            [(ngModel)]="contactData.Alias" #alias="ngModel" [maxlength]="15">
                 
-            </div>
-            <div>
-                <input type="text" id="celular" name="celular" placeholder="Celular" required
-                [(ngModel)]="contactData.CelularNumber" #celular="ngModel" [maxlength]="15">
-            </div>
-            <div>
-                <input type="text" id="email" name="email" placeholder="Email"
-                [(ngModel)]="contactData.Email"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">>
-            </div>
+
+            <input type="text" id="celular" name="celular" placeholder="Celular" required
+            [(ngModel)]="contactData.CelularNumber" #celular="ngModel" [maxlength]="15">
+
+            <input type="text" id="telefono" name="telefono" placeholder="Telefono" required
+            [(ngModel)]="contactData.TelephoneNumber" #telefono="ngModel" [maxlength]="15">
+
+            <input type="text" id="email" name="email" placeholder="Email"
+            [(ngModel)]="contactData.Email"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+
             <p class="botones">
                 <button class="submit" type="submit">Agregar Contacto</button>
-                <button class="submit"type="submit">Cancelar</button>
+                <button class="submit" [routerLink]="['/contactos']" type="submit">Cancelar</button>
             </p>
         </form>
     </div>
