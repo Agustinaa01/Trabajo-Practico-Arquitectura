@@ -1,1 +1,1 @@
-export const BACKEND_URL: string = "http://localhost:7108";
+export const BACKEND_URL: string = "https://localhost:7108";

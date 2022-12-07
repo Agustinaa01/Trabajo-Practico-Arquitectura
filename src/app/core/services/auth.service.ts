@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { BACKEND_URL } from '../constants/backend';
-import { iAuthRequest } from '../interfaces/auth';
+import { iAuthRequest, iRegisterRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 
 @Injectable({
@@ -20,11 +21,21 @@ export class AuthService {
     if(!res.ok) return false   
     const token = await res.text();
     console.log(token)
+    
+    // const helper = new JwtHelperService();
+    // const decodedToken = helper.decodeToken(token);
+    // const sub = decodedToken.sub;
+    // console.log(sub);
 
     if (!token) return false;
     this.setSession(token);
+    // this.setUserId(sub);
     return true;
   }
+
+  // setUserId(id : string){//**************
+  //   localStorage.setItem('Id', id);
+  // }
 
   isLoggedIn(){
     return this.loggedIn;
@@ -66,4 +77,18 @@ export class AuthService {
     this.loggedIn = false;
     window.location.reload();
   }
+  
+  async addUser(user: iRegisterRequest) { 
+    console.log(user);
+    const res = await fetch(BACKEND_URL+'/api/authentication', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    return await res.json();
+    // console.log(res.json())
+  }
+
 }
