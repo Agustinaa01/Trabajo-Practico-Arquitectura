@@ -1,0 +1,16 @@
+<body>
+    <div class="card-content">
+        <div class="info">
+            <p class="name"> Nombre: {{contacto.Name}}, {{contacto.LastName}}</p>
+            <p class="alias"> Alias: {{contacto.Alias}}</p>
+            <p class="phone"> Celular: {{contacto.CelularNumber}}</p>
+            <p class="email"> Email: {{contacto.Email}}</p>
+        </div>
+            
+        <div class="interaction">
+            <input class="editar"  type="image" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
+            <input class="eliminar" type="image" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" (click)="deleteContact(contacto.id!)">
+            <input class="GRUPO" [routerLink] = "['/choosegroup']"type="image" src="https://cdn-icons-png.flaticon.com/512/47/47768.png">
+        </div>
+        </div>
+</body>

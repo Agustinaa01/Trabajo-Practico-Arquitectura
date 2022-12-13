@@ -1,8 +1,8 @@
 export interface IUser{
-  name?: string;
-  lastName?: string;
-  password?: string;
-  userName: string;
+  // Name?: string;
+  // LastName?: string;
+  Password?: string;
+  UserName: string;
 }
 
 export const defaultUser = {

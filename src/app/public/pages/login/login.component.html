@@ -1,20 +1,23 @@
-<body>
-    <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back">
-    <div class="agenda"><strong>Agenda de Contactos</strong></div>
-    <div class="formulario">
-        <h1>Inicio de sesion</h1>
-        <form method="post">
-            <div class="username">
-                <input type="text" required>
-                <label>Nombre de Usuario</label>
-            </div>
-            <div class="contraseña">
-                <input type="password" required>
-                <label>Contraseña</label>
-            </div>
-            <div class="recordar">Olvide mi contraseña</div>
-            <input class= "submit" [routerLink] = "['/contacts']" type="submit" value="Iniciar Sesion">
-            <div class="bottom"></div>
-        </form>
+<!-- <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back"> -->
+  <div class = "agenda"><strong>Agenda de Contactos</strong></div>
+  
+  <div class="formulario">
+    <h1>Inicio Sesion de Usuario</h1>
+  
+    <form (ngSubmit)="login(form)" #form="ngForm">
+    
+      <div class="username">
+        <input type="text" name="UserName" placeholder="Nombre de Usuario"
+        [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel">
     </div>
-</body>
+    
+    <div class="contraseña">
+      <input type="password" name="Password" autocomplete="current-password" placeholder="Contraseña"
+        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel">
+    </div>
+    <div class="recordar">Olvide mi contraseña</div>
+    
+    <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
+      <button class= "submit" type="submit">Iniciar Sesion</button>
+  </form>
+</div>

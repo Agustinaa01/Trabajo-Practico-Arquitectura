@@ -1,4 +1,9 @@
 export interface iAuthRequest{
-  userName:string;
-  password:string;
+  UserName:string;
+  Password:string;
+}
+export interface iRegisterRequest{
+  UserName:string;
+  Email:string;
+  Password:string;
 }

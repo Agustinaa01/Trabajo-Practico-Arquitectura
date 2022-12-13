@@ -1,15 +1,17 @@
-export interface Contact {
-    name: string,
-    lastname: string
-    celularNumber?: string,
-}
-
+// export interface Contact{
+//     id: number,
+//     Name: string,
+//     Alias:string;
+//     LastName:string;
+//     CelularNumber: string,
+//     Email:string;
+// }
 export interface ContactJsonPlaceHolder{
-    id?: number,
-    name?: string,
-    celularNumber?: string,
-    telephoneNumber?: string,
-    description?: string,
-    userId?: string,
-    phone?: string
+  id: number,
+  Name: string,
+  Alias: string;
+  LastName:string;
+  CelularNumber: string,
+  TelephoneNumber: string,
+  Email:string;
 }

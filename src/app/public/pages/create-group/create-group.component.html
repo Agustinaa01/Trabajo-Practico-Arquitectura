@@ -1,0 +1,18 @@
+<body> 
+    <div class="formulario">
+        <h1>Crear un grupo</h1>
+        <form (ngSubmit)="newgroup(form)" #form="ngForm" class="grupos">
+
+            <input type="text" class="inbox" name="GroupName" placeholder="Nombre del grupo"
+            [(ngModel)]="groupData.GroupName" #name="ngModel" [maxlength]="15">
+ 
+            <input type="text"class="inbox"name="Description" placeholder="Descripcion"
+            [(ngModel)]="groupData.Description" #descripcion="ngModel" [maxlength]="15">
+
+            <div class="botones">
+                <button class= "submit" type="submit">Aceptar</button>
+                <button class= "submit" type="submit">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { iAuthRequest } from 'src/app/core/interfaces/auth';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  constructor(private auth:AuthService, private router:Router) { }
 
-  ngOnInit(): void {
+  //Hecho usando NgModel
+  authData:iAuthRequest = {
+    UserName : "",
+    Password : ""
+  };
+
+
+  async login(form:NgForm){
+    //Valor del formulario para no usar NgModel
+    console.log(form.value);
+    const token = await this.auth.login(form.value);
+    if(token) this.router.navigate(['contacts']);
   }
 
 }

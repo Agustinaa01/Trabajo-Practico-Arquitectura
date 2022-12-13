@@ -1,0 +1,86 @@
+body{
+    overflow-y: auto;
+    width: 100%; 
+}
+
+.listaContactos{
+    background-color: #E3E5F9;
+    display: flex;
+    align-items: center;
+    flex-direction: wrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.submit:hover{
+    background-color: #ECF4F7;
+    color: #7C88FF;
+    transition: 300ms; 
+}
+
+.buscar{
+    width: -webkit-fill-available;
+    margin: 7px;
+    height: 35px;
+    color: #000;
+    font-size: 16px;   
+    border: none;
+    border-radius: 10px;
+    padding-left: 35px;
+    background-image: url(https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png);
+    background-size: 20px;
+    background-position: 7px 6px;
+    background-repeat: no-repeat;
+}
+
+.buscar:hover{
+    transition: 300ms; 
+}
+
+
+
+// main{
+//     display: flex; 
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+// }
+
+
+#agregar{
+    position:fixed;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    width:-webkit-fill-available;;
+    height: 50px;
+    text-align: center;
+}
+
+#agregar :hover{
+    border: 1px solid #7C88FF;
+    transition: .5s;
+    background-color: #fff;
+    color: #7C88FF;
+    transition: 250ms;
+}
+.boton{
+    background-color: #7C88FF;
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    margin: 4px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+

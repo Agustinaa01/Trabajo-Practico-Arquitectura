@@ -1,19 +1,28 @@
-<body>
-    <img routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back">
-    <div class="agenda"><strong>Agenda de Contactos</strong></div>
-    <div class="formulario">
-        <h1>Registrarse</h1>
-        <form method="post">
-            <div class="username">
-                <input type="text" required>
-                <label>Nombre de Usuario</label>
-            </div>
-            <div class="contraseña">
-                <input type="password" required>
-                <label>Contraseña</label>
-            </div>
-            <input class= "submit" [routerLink] = "['/contacts']" type="submit" value="Registarse">
-            <div class="bottom"></div>
-        </form>
+<!-- <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back"> -->
+  <div class = "agenda"><strong>Agenda de Contactos</strong></div>
+  
+  <div class="formulario">
+  <h1>Registro de Usuario</h1>
+  
+    <form (ngSubmit)="register(form)" #form="ngForm">
+    
+      <div class="username">
+      <!-- <label for="username">Nombre de Usuario</label> -->
+      <input type="userName" name="userName" placeholder="Nombre"
+       [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel"
+      >
     </div>
-</body>
+    <div class="email">
+    <input type="text" id="email" name="email" placeholder="Email"
+    [(ngModel)]="authData.Email"   #mail="ngModel" [maxlength]="30">
+  </div>
+  
+    <div class="contraseña">
+      <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
+        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel"
+      >
+    </div>
+    <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
+      <button class= "submit" type="submit">Registrarse</button>
+  </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
+import { ContactJsonPlaceHolder} from 'src/app/core/interfaces/contacts';
 import { ContactService } from 'src/app/core/services/contact.service';
 
 
@@ -9,16 +9,17 @@ import { ContactService } from 'src/app/core/services/contact.service';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-
-  contactsData:ContactJsonPlaceHolder[] = [];
-
-  constructor(private cs:ContactService) { }
+  
+  constructor(private us: ContactService) { }
+  contactos: ContactJsonPlaceHolder[] = [];
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
   }
 
-  async getData(){
-    this.contactsData = await this.cs.getContacts();
+  async getData() {
+    this.contactos = await this.us.getContacts();
   }
+
 }
+
