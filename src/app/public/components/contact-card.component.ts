@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
 import { ContactService } from 'src/app/core/services/contact.service';
+import { ContactsComponent } from '../pages/contacts/contacts.component';
 
 @Component({
   selector: 'app-contact-card',
@@ -8,18 +10,31 @@ import { ContactService } from 'src/app/core/services/contact.service';
   styleUrls: ['./contact-card.component.scss']
 })
 export class ContactCardComponent implements OnInit {
-  constructor(private cs:ContactService) { }
+  constructor(private cs: ContactService, private router:Router) { }
 
   //@Input() contact: Contact = defaultContact
- @Input() contacto: ContactJsonPlaceHolder = {} as ContactJsonPlaceHolder;
+ @Input() contacto: ContactJsonPlaceHolder = {
+  id:0,
+  Name: '',
+  Alias: '',
+  LastName:'',
+  CelularNumber: '',
+  TelephoneNumber: '',
+  Email: '',
+ };
+ async deleteContact(id:number){ 
+  console.log("Contacto", id, "eliminado");
+  const contacteliminado = await this.cs.deleteContact(id);
+  if (contacteliminado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  }
 
- contactsData:ContactJsonPlaceHolder[] = [];
+//  contactsData:ContactJsonPlaceHolder[] = [];
 
  ngOnInit(): void {
-  this.getData()
+  // this.getData()
 }
 
-async getData(){
-  this.contactsData = await this.cs.getContacts();
-}
+// async getData(){
+//   this.contactsData = await this.cs.getContacts();
+// }
 }
