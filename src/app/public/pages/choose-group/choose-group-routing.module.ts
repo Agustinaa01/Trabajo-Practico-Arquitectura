@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GrupoComponent } from './grupo.component';
+import { ChooseGroupComponent } from './choose-group.component';
 
-const routes: Routes = [
-  {
-    path: "",
-    component: GrupoComponent
-  }
-];
+const routes: Routes = [  {
+  path: "",
+  component: ChooseGroupComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GrupoRoutingModule { }
+export class ChooseGroupRoutingModule { }

@@ -1,25 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { iGroup } from 'src/app/core/interfaces/group.interface';
+import { iGroup, iGroupandContact } from 'src/app/core/interfaces/group.interface';
 import { GroupService } from 'src/app/core/services/group.services';
 
 @Component({
-  selector: 'app-grupo',
-  templateUrl: './grupo.component.html',
-  styleUrls: ['./grupo.component.scss']
+  selector: 'app-choose-group',
+  templateUrl: './choose-group.component.html',
+  styleUrls: ['./choose-group.component.scss']
 })
-export class GrupoComponent implements OnInit {
+export class ChooseGroupComponent implements OnInit {
   
 
   
   constructor(private cs:GroupService, private router:Router) { }
 
-  groupData:iGroup = {
-    Id: 0,
-    GroupName: '',
-    Description: '',
-    Contacts: []
+  groupData:iGroupandContact = {
+    GroupId: 0,
+    ContactId: 0
   };
 
   // async group(form:NgForm){ 
@@ -29,7 +26,7 @@ export class GrupoComponent implements OnInit {
   // } // contactosFalsos = contactos
   
   
-  grupo:iGroup[] = [];
+  grupo:iGroupandContact[] = [];
   
   ngOnInit(): void {
     this.getData()
@@ -37,14 +34,14 @@ export class GrupoComponent implements OnInit {
 
   async getData(){
     const grupo = {
-      Id: 1,
+      GroupId: 1,
       GroupName: "Familia",
-      Description:"La Family",
-      Contacts: []
+      ContactId: 2,
+      Name: "Ana"
     };
 
     try{
-      this.grupo = await this.cs.getGroups();
+      this.grupo = await this.cs.getGroupstoAdd();
     }
     catch(err) {
       this.grupo = [grupo];

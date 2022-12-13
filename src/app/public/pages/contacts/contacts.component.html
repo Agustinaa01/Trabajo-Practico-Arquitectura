@@ -1,24 +1,11 @@
 <body>
-<nav>
-    <!-- <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back"> -->
-     <div class="nombre"><h1>Agenda de Contactos</h1></div>
-     <div class="search-box">
-        <input type="search" placeholder="Buscar">
-     </div>
-     <ol>
-        <li><a [routerLink] = "['/login']">Cerrar Sesion</a></li>    
-    </ol>
-    
-</nav>
+<app-header></app-header>
 
 <main>
     <app-contact-card *ngFor="let contacto of contactos" [contacto]="contacto"></app-contact-card>
 </main>
 
 <footer>
-    <div id="agregar">
-        <button [routerLink] = "['/popup']"class="boton" type="button">Agregar Contacto</button>
-        <button [routerLink] = "['/grupo']" class="boton" type="button">Crear Grupo</button>
-        </div>
+ <app-footer></app-footer>
 </footer>
 </body>

@@ -9,36 +9,17 @@ import { ContactService } from 'src/app/core/services/contact.service';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-
-  contactos:ContactJsonPlaceHolder[] = [];
   
-  constructor(private us:ContactService) { }
-  // contactosFalsos = contactos
+  constructor(private us: ContactService) { }
+  contactos: ContactJsonPlaceHolder[] = [];
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
   }
 
-  async getData(){
-    const contactos = {
-      id:1,
-      Name: "Maria",
-      LastName: "Juarez",
-      Alias: "Mary",
-      Email:"maria123@gmail.com",
-      CelularNumber: "3436478954",
-      TelephoneNumber: "645545"
-    };
+  async getData() {
+    this.contactos = await this.us.getContacts();
+  }
 
-    try{
-      this.contactos = await this.us.getContacts();
-    }
-    catch(err) {
-      this.contactos = [contactos];
-    }
-    console.log(this.contactos)
-  };
-  
- 
 }
 

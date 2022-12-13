@@ -19,7 +19,8 @@ export class PopUpComponent implements OnInit {
     LastName: '',
     CelularNumber: '',
     Email: '',
-    TelephoneNumber: ""
+    TelephoneNumber: "",
+    id: 0
   };
   ngOnInit(): void {
   }

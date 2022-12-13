@@ -20,7 +20,8 @@ export class EditcontactComponent implements OnInit {
     LastName: '',
     CelularNumber: '',
     Email: '',
-    TelephoneNumber: ''
+    TelephoneNumber: '',
+    id: 0
   }
 
   async getContacto(id:number){  //recibe el id de un contacto

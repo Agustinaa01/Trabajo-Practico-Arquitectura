@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
 import { BACKEND_URL } from '../constants/backend';
 import {ContactJsonPlaceHolder } from '../interfaces/contacts';
+import { iGroup, iGroupandContact } from '../interfaces/group.interface';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ContactService {
+export class GroupService {
   constructor(private auth:AuthService) {}
 
-  async getContactDetails(id: number): Promise<ContactJsonPlaceHolder> {
-    const data = await fetch(BACKEND_URL+'/api/Contacts/'+ id,{
+  async getGroups(): Promise<iGroup[]> {
+    const data = await fetch(BACKEND_URL+'/api/Group',{
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` ////******************* */
+      },
+    });
+    return await data.json();
+  }
+  async getGroupstoAdd(): Promise<iGroupandContact[]> {
+    const data = await fetch(BACKEND_URL+'/api/Group',{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -20,51 +31,34 @@ export class ContactService {
     return await data.json();
   }
 
-  async getContacts(): Promise<ContactJsonPlaceHolder[]> {
-    const data = await fetch(BACKEND_URL+'/api/Contacts',{
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
-      },
-    });
-    return await data.json();
-  }
-
-  async editContact(contact: ContactJsonPlaceHolder) {
+  async createGroup(group: iGroup){
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contacts', {
-      method: 'PUT',
-      headers: {
-        'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
-      },
-      body: JSON.stringify(contact),
-    });
-    return await res.json();
-  }
-
-  async addContact(contact: ContactJsonPlaceHolder){
-    console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contacts', {
+    const res = await fetch(BACKEND_URL+'/api/Group', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
         'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
-      body: JSON.stringify(contact),
+      body: JSON.stringify(group),
     });
     return await res.json();
   }
+  
 
-  async deleteContact(id:number):Promise<boolean>{
-    const res = await fetch(BACKEND_URL+'/api/Contacts'+id, {
+  async addtogroup(grupo: iGroupandContact){
+    console.log('Enviando edit de usuario a la api');
+    const res = await fetch(BACKEND_URL+'/api/Group/AddContacts', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
         'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
+      body: JSON.stringify(grupo),
     });
-    return res.ok;
+    return await res.json();
   }
+
+
+
+
 }

@@ -7,12 +7,12 @@
     <form (ngSubmit)="login(form)" #form="ngForm">
     
       <div class="username">
-        <input type="text" name="username" placeholder="Nombre de Usuario"
+        <input type="text" name="UserName" placeholder="Nombre de Usuario"
         [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel">
     </div>
     
     <div class="contraseña">
-      <input type="password" name="contraseña" autocomplete="current-password" placeholder="Contraseña"
+      <input type="password" name="Password" autocomplete="current-password" placeholder="Contraseña"
         [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel">
     </div>
     <div class="recordar">Olvide mi contraseña</div>

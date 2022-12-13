@@ -1,12 +1,3 @@
-<div class="formulario">
-    <h1>Agregar a grupo</h1>
-    <div class="grupos">
-        <button class="boton">"Mis amigos"</button>
-        <button class="	boton">"Mi familia"</button>
-        <button class="boton">"Amigos del trabajo"</button>
-    </div>
-    <div class="botones">
-        <button class= "submit" type="submit">Aceptar</button>
-        <button class= "submit" type="submit">Cancelar</button>
-    </div>
-</div>
+<main>
+    <app-group-card *ngFor="let grupo of grupo" [groups]="grupo"></app-group-card>
+</main>

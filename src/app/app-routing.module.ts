@@ -35,6 +35,15 @@ const routes: Routes = [
     path: 'editcontact',
     loadChildren: () => import('./public/pages/editcontact/editcontact.module').then(m => m.EditcontactModule)
   },
+  {
+    path: 'creategroup',
+    loadChildren: () => import('./public/pages/create-group/create-group.module').then(m => m.CreateGroupModule)
+  },
+  {
+    path: 'choosegroup',
+    loadChildren: () => import('./public/pages/choose-group/choose-group.module').then(m => m.ChooseGroupModule)
+  },
+
 ];
 
 @NgModule({

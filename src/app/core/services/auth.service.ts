@@ -80,7 +80,7 @@ export class AuthService {
   
   async addUser(user: iRegisterRequest) { 
     console.log(user);
-    const res = await fetch(BACKEND_URL+'/api/authentication', {
+    const res = await fetch(BACKEND_URL+'/api/Users', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'

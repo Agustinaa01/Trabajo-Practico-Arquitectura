@@ -2,24 +2,24 @@
     <div id = "agregar">
         <h5>Agregar Contacto</h5>
         <form (ngSubmit)="newcontact(form)" #form="ngForm" id="agregar-form">
-            <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required=""
+            <input type="text" id="nombre" name="Name" placeholder="Nombre" required=""
             [(ngModel)]="contactData.Name" #name="ngModel" [maxlength]="15">
  
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido"
+            <input type="text" id="apellido" name="LastName" placeholder="Apellido"
             [(ngModel)]="contactData.LastName" #lastname="ngModel" [maxlength]="15">
 
-            <input type="text" id="alias" name="alias" placeholder="Alias"
+            <input type="text" id="alias" name="Alias" placeholder="Alias"
             [(ngModel)]="contactData.Alias" #alias="ngModel" [maxlength]="15">
                 
 
-            <input type="text" id="celular" name="celular" placeholder="Celular" required
+            <input type="text" id="celular" name="CelularNumber" placeholder="Celular" required
             [(ngModel)]="contactData.CelularNumber" #celular="ngModel" [maxlength]="15">
 
-            <input type="text" id="telefono" name="telefono" placeholder="Telefono" required
+            <input type="text" id="telefono" name="TelephoneNumber" placeholder="Telefono" required
             [(ngModel)]="contactData.TelephoneNumber" #telefono="ngModel" [maxlength]="15">
 
-            <input type="text" id="email" name="email" placeholder="Email"
-            [(ngModel)]="contactData.Email"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+            <input type="text" id="email" name="Email" placeholder="Email"
+            [(ngModel)]="contactData.Email"   #mail="ngModel" [maxlength]="30">
 
             <p class="botones">
                 <button class="submit" type="submit">Agregar Contacto</button>
