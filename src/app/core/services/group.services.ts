@@ -15,7 +15,7 @@ export class GroupService {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}` ////******************* */
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` 
       },
     });
     return await data.json();
@@ -25,7 +25,7 @@ export class GroupService {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}` ////******************* */
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` 
       },
     });
     return await data.json();
@@ -57,7 +57,16 @@ export class GroupService {
     });
     return await res.json();
   }
-
+  async deleteGroup(id:number):Promise<boolean>{
+    const res = await fetch(BACKEND_URL+'/api/Group/'+id, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+    });
+    return res.ok;
+  }
 
 
 

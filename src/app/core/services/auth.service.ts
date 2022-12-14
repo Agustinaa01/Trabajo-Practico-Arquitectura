@@ -78,17 +78,5 @@ export class AuthService {
     window.location.reload();
   }
   
-  async addUser(user: iRegisterRequest) { 
-    console.log(user);
-    const res = await fetch(BACKEND_URL+'/api/Users', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    });
-    return await res.json();
-    // console.log(res.json())
-  }
 
 }

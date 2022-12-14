@@ -15,12 +15,12 @@ export class ContactCardComponent implements OnInit {
   //@Input() contact: Contact = defaultContact
  @Input() contacto: ContactJsonPlaceHolder = {
   id:0,
-  Name: '',
-  Alias: '',
-  LastName:'',
-  CelularNumber: '',
-  TelephoneNumber: '',
-  Email: '',
+  name: '',
+  alias: '',
+  lastName:'',
+  celularNumber: '',
+  telephoneNumber: '',
+  email: '',
  };
  async deleteContact(id:number){ 
   console.log("Contacto", id, "eliminado");
@@ -28,10 +28,16 @@ export class ContactCardComponent implements OnInit {
   if (contacteliminado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
   }
 
+  // async editContacto(){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
+  //   console.log("contacto editado")
+  //   const contacteditado = await this.cs.editContact();
+  //   if (contacteditado) this.router.navigate(['/contacts']);  //cambia el valor de abrirContactEdit en el contact component por 1 para q se cierre las contact-card y se abra el edit-form
+  // }
+
 //  contactsData:ContactJsonPlaceHolder[] = [];
 
  ngOnInit(): void {
-  // this.getData()
+
 }
 
 // async getData(){

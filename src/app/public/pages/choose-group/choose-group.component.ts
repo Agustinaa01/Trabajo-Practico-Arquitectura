@@ -15,8 +15,8 @@ export class ChooseGroupComponent implements OnInit {
   constructor(private cs:GroupService, private router:Router) { }
 
   groupData:iGroupandContact = {
-    GroupId: 0,
-    ContactId: 0
+    groupId: 0,
+    contactId: 0
   };
 
   // async group(form:NgForm){ 
@@ -34,10 +34,8 @@ export class ChooseGroupComponent implements OnInit {
 
   async getData(){
     const grupo = {
-      GroupId: 1,
-      GroupName: "Familia",
-      ContactId: 2,
-      Name: "Ana"
+      groupId: 1,
+      contactId: 2,
     };
 
     try{

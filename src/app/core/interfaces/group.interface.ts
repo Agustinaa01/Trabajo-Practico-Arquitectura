@@ -1,17 +1,18 @@
 import { ContactJsonPlaceHolder } from "./contacts";
 
 export interface iGroup{
-  Id: number;
-  GroupName:string;
-  Description:string;
-  Contacts: ContactJsonPlaceHolder[]
+  id: number;
+  groupName:string;
+  description:string;
+  contacts: ContactJsonPlaceHolder;
 }
 export interface iGroupandContact{
-  GroupId: number;
-  ContactId: number;
+  groupId: number;
+  contactId: number;
 }
 export interface iCreateGroup{
-  GroupName: string;
-  Description: string;
+  groupName: string;
+  description: string;
 }
+
 

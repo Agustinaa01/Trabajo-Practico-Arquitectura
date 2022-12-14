@@ -10,45 +10,17 @@ import { GroupService } from 'src/app/core/services/group.services';
   styleUrls: ['./grupo.component.scss']
 })
 export class GrupoComponent implements OnInit {
-  
 
-  
-  constructor(private cs:GroupService, private router:Router) { }
+  constructor(private us: GroupService) { }
+  grupos: iGroup[] = [];
 
-  groupData:iGroup = {
-    Id: 0,
-    GroupName: '',
-    Description: '',
-    Contacts: []
-  };
-
-  // async group(form:NgForm){ 
-  // console.log(form.value);
-  // const grupocreado = await this.cs.createGroup(form.value);
-  // if (grupocreado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-  // } // contactosFalsos = contactos
-  
-  
-  grupo:iGroup[] = [];
-  
   ngOnInit(): void {
-    this.getData()
+    this.getData();
+    console.log(this.grupos)
   }
 
-  async getData(){
-    const grupo = {
-      Id: 1,
-      GroupName: "Familia",
-      Description:"La Family",
-      Contacts: []
-    };
-
-    try{
-      this.grupo = await this.cs.getGroups();
-    }
-    catch(err) {
-      this.grupo = [grupo];
-    }
-    console.log(this.grupo)
-  };
+  async getData() {
+    this.grupos= await this.us.getGroups();
+    console.log(this.grupos);
+  }
 }
