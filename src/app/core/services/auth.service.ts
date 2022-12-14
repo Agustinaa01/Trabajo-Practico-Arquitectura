@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BACKEND_URL } from '../constants/backend';
 import { iAuthRequest, iRegisterRequest } from '../interfaces/auth';
@@ -8,7 +9,7 @@ import { ISession } from '../interfaces/session.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private router:Router) {}
 
   private loggedIn: boolean = false;
 
@@ -75,7 +76,7 @@ export class AuthService {
   resetSession() {
     localStorage.removeItem('session');
     this.loggedIn = false;
-    window.location.reload();
+    this.router.navigate(['/login']);
   }
   
 
