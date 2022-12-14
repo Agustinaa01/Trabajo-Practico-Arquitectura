@@ -1,9 +1,20 @@
 <body>
     <div class="card-content">
         <div class="info">
-            <span class="name">{{groups.GroupName}}</span>
-            <span class="description"> {{groups.Description}}</span>
-            <span class="contacts">{{groups.Contacts}}</span>
+            <span class="name">Nombre del grupo: {{groups.groupName}}</span>
+            <span class="description"> Descripcion: {{groups.description}}</span>
+            <span class="contacts">Contactos: {{groups.contacts?.name}}</span>
+            <span class="contacts">{{groups.contacts?.celularNumber}}</span>
+        </div>
+
+    <div class="interaction">
+        <a href="/grupo#open-modal"><input class="eliminar" type="image" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" (click)="deleteGroup(groups.id!)"></a>
+            <div id="open-modal" class="modal-window">
+            <div>
+                <a href="/grupo#modal-close" title="Close" class="modal-close">close &times;</a>
+                <div>Grupo eliminado exitosamente!</div>
+              </div>
+            </div>
         </div>
     </div>
 </body>

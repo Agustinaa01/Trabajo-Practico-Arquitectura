@@ -19,6 +19,7 @@ export class ContactsComponent implements OnInit {
 
   async getData() {
     this.contactos = await this.us.getContacts();
+    console.log(this.contactos);
   }
 
 }

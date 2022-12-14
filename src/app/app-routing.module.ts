@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./public/pages/addcontact/pop-up.module').then(m => m.PopUpModule)
   },
   {
-    path: 'deletecontact',
-    loadChildren: () => import('./public/pages/deletecontact/deletecontact.module').then(m => m.DeletecontactModule)
-  },
-  {
     path: 'grupo',
     loadChildren: () => import('./public/pages/grupo/grupo.module').then(m => m.GrupoModule)
   },

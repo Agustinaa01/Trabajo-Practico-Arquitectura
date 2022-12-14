@@ -5,8 +5,3 @@ export interface IUser{
   UserName: string;
 }
 
-export const defaultUser = {
-  id: "User ID",
-  username: "Username",
-  role: "CLIENT"
-}

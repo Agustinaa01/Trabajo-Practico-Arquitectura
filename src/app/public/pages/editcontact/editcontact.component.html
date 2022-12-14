@@ -1,24 +1,24 @@
 <body> 
     <div id = "agregar">
         <h5>Editar Contacto</h5>
-        <form (ngSubmit)="editcontact(contactEdit.id!,form)" #form="ngForm" id="agregar-form">
-            <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required=""
-            [(ngModel)]="contactEdit.Name" #name="ngModel" [maxlength]="15">
+        <form (ngSubmit)="editcontact(form)" #form="ngForm" id="agregar-form">
+            <input type="text" id="nombre" name="Name" placeholder="Nombre" required=""
+            [(ngModel)]="contactEdit.name" #name="ngModel" [maxlength]="15">
  
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido"
-            [(ngModel)]="contactEdit.LastName" #lastname="ngModel" [maxlength]="15">
+            <input type="text" id="apellido" name="LastName" placeholder="Apellido"
+            [(ngModel)]="contactEdit.lastName" #lastname="ngModel" [maxlength]="15">
 
-            <input type="text" id="alias" name="alias" placeholder="Alias"
-            [(ngModel)]="contactEdit.Alias" #alias="ngModel" [maxlength]="15">
+            <input type="text" id="alias" name="Alias" placeholder="Alias"
+            [(ngModel)]="contactEdit.alias" #alias="ngModel" [maxlength]="15">
 
-            <input type="text" id="celular" name="celular" placeholder="Celular" required
-            [(ngModel)]="contactEdit.CelularNumber" #celular="ngModel" [maxlength]="15">
+            <input type="text" id="celular" name="CelularNumber" placeholder="Celular" required
+            [(ngModel)]="contactEdit.celularNumber" #celular="ngModel" [maxlength]="15">
             
-            <input type="text" id="telefono" name="telefono" placeholder="Telefono" required
-            [(ngModel)]="contactEdit.TelephoneNumber" #telefono="ngModel" [maxlength]="15">
+            <input type="text" id="telefono" name="TelephoneNumber" placeholder="Telefono" required
+            [(ngModel)]="contactEdit.telephoneNumber" #telefono="ngModel" [maxlength]="15">
 
-            <input type="text" id="email" name="email" placeholder="Email"
-            [(ngModel)]="contactEdit.Email"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+            <input type="text" id="email" name="Email" placeholder="Email"
+            [(ngModel)]="contactEdit.email" #mail="ngModel" [maxlength]="30">
 
             <p class="botones">
                 <button class="submit" type="submit">Editar Contacto</button>

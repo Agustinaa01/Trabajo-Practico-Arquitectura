@@ -8,10 +8,10 @@
 // }
 export interface ContactJsonPlaceHolder{
   id: number,
-  Name: string,
-  Alias: string;
-  LastName:string;
-  CelularNumber: string,
-  TelephoneNumber: string,
-  Email:string;
+  name: string,
+  alias: string;
+  lastName:string;
+  celularNumber: string,
+  telephoneNumber: string,
+  email:string;
 }

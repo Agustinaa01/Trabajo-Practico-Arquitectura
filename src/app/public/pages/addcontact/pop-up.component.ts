@@ -14,12 +14,12 @@ export class PopUpComponent implements OnInit {
   constructor(private cs:ContactService, private router:Router) { }
 
   contactData:ContactJsonPlaceHolder = {
-    Name: '',
-    Alias: '',
-    LastName: '',
-    CelularNumber: '',
-    Email: '',
-    TelephoneNumber: "",
+    name: '',
+    alias: '',
+    lastName: '',
+    celularNumber: '',
+    email: '',
+    telephoneNumber: "",
     id: 0
   };
   ngOnInit(): void {

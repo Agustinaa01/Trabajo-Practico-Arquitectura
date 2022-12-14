@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BACKEND_URL } from '../constants/backend';
 import { iAuthRequest, iRegisterRequest } from '../interfaces/auth';
@@ -8,7 +9,7 @@ import { ISession } from '../interfaces/session.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private router:Router) {}
 
   private loggedIn: boolean = false;
 
@@ -75,20 +76,8 @@ export class AuthService {
   resetSession() {
     localStorage.removeItem('session');
     this.loggedIn = false;
-    window.location.reload();
+    this.router.navigate(['/login']);
   }
   
-  async addUser(user: iRegisterRequest) { 
-    console.log(user);
-    const res = await fetch(BACKEND_URL+'/api/Users', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    });
-    return await res.json();
-    // console.log(res.json())
-  }
 
 }

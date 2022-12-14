@@ -9,20 +9,20 @@
       <div class="username">
       <!-- <label for="username">Nombre de Usuario</label> -->
       <input type="userName" name="userName" placeholder="Nombre"
-       [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel"
+       [(ngModel)]="authData.userName" [required]="true" #userName="ngModel"
       >
-    </div>
     <div class="email">
-    <input type="text" id="email" name="email" placeholder="Email"
-    [(ngModel)]="authData.Email"   #mail="ngModel" [maxlength]="30">
-  </div>
+      <input type="text" id="email" name="email" placeholder="Email"
+      [(ngModel)]="authData.email"   #mail="ngModel" [maxlength]="30">
+    </div>
   
     <div class="contraseña">
       <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
-        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel"
-      >
+      [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel">
     </div>
-    <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
+
+    <div class="error" *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
       <button class= "submit" type="submit">Registrarse</button>
+    </div>
   </form>
 </div>
