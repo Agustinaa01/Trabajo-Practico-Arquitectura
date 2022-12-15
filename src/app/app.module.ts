@@ -4,6 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { CardDetailComponent } from './public/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [

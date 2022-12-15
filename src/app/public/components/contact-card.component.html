@@ -1,14 +1,11 @@
 <body>
     <div class="card-content">
         <div class="info">
+        
             <span class="name"> Nombre: {{contacto.name}}, {{contacto.lastName}}</span>
-            <span class="alias"> Alias: {{contacto.alias}}</span>
             <span class="phone"> Celular: {{contacto.celularNumber}}</span>
-            <span class="phone"> Telefono: {{contacto.telephoneNumber}}</span>
-            <span class="email"> Email: {{contacto.email}}</span>
+            <span [routerLink]="['/contacts', contacto.id]" class="mas">Ver mas...</span>
         </div>
-           
-
 
 <div class="interaction">
     <input class="editar" [routerLink] = "['/editcontact']" type="image" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">

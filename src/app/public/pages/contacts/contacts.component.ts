@@ -9,7 +9,7 @@ import { ContactService } from 'src/app/core/services/contact.service';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  
+
   constructor(private us: ContactService) { }
   contactos: ContactJsonPlaceHolder[] = [];
 

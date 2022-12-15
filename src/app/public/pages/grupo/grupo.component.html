@@ -1,3 +1,15 @@
-<main>
+<nav>
+    <!-- <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back"> -->
+     <div class="nombre"><h1>Agenda de Contactos</h1></div>
+     <div class="search-box">
+        <input type="search" placeholder="Buscar">
+     </div>
+     <ol>
+        <li><a (click)="logOut()">Cerrar Sesion</a></li>    
+    </ol>
+</nav>
+<div>
     <app-group-card *ngFor="let grupo of grupos" [groups]="grupo"></app-group-card>
-</main>
+    <!-- <span *ngFor="let contacto of grupos.contacts; let i = index">
+                <p> {{ contacto }}</p> -->
+

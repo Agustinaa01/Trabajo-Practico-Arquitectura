@@ -39,8 +39,22 @@ const routes: Routes = [
     path: 'choosegroup',
     loadChildren: () => import('./public/pages/choose-group/choose-group.module').then(m => m.ChooseGroupModule)
   },
-
+  {
+    path: 'contacts/:id',
+    loadChildren: () =>
+      import('./public/card-detail/card-detail.module').then(
+        (m) => m.CardDetailtModule
+      )
+  },  {
+    path: 'edit-contact/:id',
+    loadChildren: () =>
+      import('./public/pages/editcontact/editcontact.module').then(
+        (m) => m.EditcontactModule
+      ),
+  },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
