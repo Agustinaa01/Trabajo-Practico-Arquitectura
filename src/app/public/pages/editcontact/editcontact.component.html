@@ -1,24 +1,27 @@
 <body>
 <div class="main">
         <div class="edit-box">
-            <h1>Editar Contacto</h1>
+            <h1><strong>Editar Contacto</strong></h1>
     
         <form #editForm="ngForm" (ngSubmit)="editForm.valid && editContact(editForm)">
           <input type="text" value="{{id}}" [hidden]="true" name="id" [(ngModel)]="contact.id" #id="ngModel">
             
         <label class="name" for="name">Nombre</label>
-        <input value="{{contact.name}}" type="text" name="name" id="name" placeholder="Name" required [(ngModel)]="contact.name" #name="ngModel"/>
+        <input value="{{contact.name}}" type="text" name="name" id="name" placeholder="Nombre" [(ngModel)]="contact.name" #name="ngModel"/>
+        
+        <label class="lastName" for="lastName">Apellido</label>
+        <input value="{{contact.lastName}}" type="text" name="lastName" id="lastName" placeholder="Apellido" [(ngModel)]="contact.lastName" #lastName="ngModel"/>
         
         <label class="alias" for="alias">Alias</label>
         <input type="text" name="alias" id="alias" placeholder="Alias" [(ngModel)]="contact.alias" #alias="ngModel"/>
     
     
-        <label class="cellPhoneNumber" for="cellphonenumber">Numero de celular</label>
-        <input value="{{contact.celularNumber}}" type="number" name="celularNumber" id="celularNumber" placeholder="Numero de celular" required [(ngModel)]="contact.celularNumber" #celularNumber="ngModel"/>
+        <label class="celularNumber" for="celularNumber">Numero de celular</label>
+        <input value="{{contact.celularNumber}}" type="celularNumber" name="celularNumber" id="celularNumber" placeholder="Numero de celular"  [(ngModel)]="contact.celularNumber" #celularNumber="ngModel"/>
     
     
         <label class="telephoneNumber" for="telephoneNumber">Numero de telefono</label>
-        <input type="number" name="telephoneNumber" id="telephoneNumber" placeholder="Numero de telefono" [(ngModel)]="contact.telephoneNumber" #telephoneNumer="ngModel"/>
+        <input type="telephoneNumber" name="telephoneNumber" id="telephoneNumber" placeholder="Numero de telefono" [(ngModel)]="contact.telephoneNumber" #telephoneNumer="ngModel"/>
         
         <label class="email" for="email">Email</label>
         <input type="text" name="email" id="email" placeholder="Email" [(ngModel)]="contact.email" #email="ngModel"/>

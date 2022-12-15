@@ -33,15 +33,15 @@ export class ContactService {
 
   async editContact(contact: ContactJsonPlaceHolder): Promise<boolean>  {
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contacts'+ (contact.id), {
+    const res = await fetch(BACKEND_URL+'/api/Contacts/'+ (contact.id), {
       method: 'PUT',
+      body: JSON.stringify(contact),
       headers: {
         'Content-type': 'application/json',
         'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
-      body: JSON.stringify(contact),
     });
-    return await res.json();
+    return res.ok;
   }
 
   async addContact(contact: ContactJsonPlaceHolder){
