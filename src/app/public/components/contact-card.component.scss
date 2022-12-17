@@ -43,24 +43,6 @@
     backface-visibility: hidden;
 }
 
-.interaction{
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    margin-top: 5px;
-}
-
-.interaction input{
-    background: white;
-    width: 20px;
-    height: 20px;
-    outline: none;
-    border: 5px solid #E3E5F9;
-    padding: 8px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
 
 .modal-window {

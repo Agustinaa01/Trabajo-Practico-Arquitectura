@@ -38,7 +38,7 @@ h1{
     transition: 100ms; 
 }
 
-@media screen and (max-width:1250px){
+@media screen and (max-width:800px){
     .ir{
         display: block;
         padding:0
@@ -61,14 +61,9 @@ h1{
         flex-direction: column;
     } 
     #inicio h1{
-        color:black;
         font-size: 50px;
-        padding: 10px;
         align-items: center;
-        display:inline-table;
-        margin: 10px;
-        width:100%;
-        display: inline-flex;
-        justify-content: center center;
+        display:flex;
+        justify-content: center;
     }
 }

@@ -21,7 +21,7 @@ export class CreateGroupComponent implements OnInit {
   async newgroup(form:NgForm){ 
   console.log(form.value);
   const grupocreado = await this.us.createGroup(form.value);
-  if (grupocreado) this.router.navigate(['/grupo']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  if (grupocreado) this.router.navigate(['/grupo']);
   }
 
   grupos:iGroupandContact[] = [];

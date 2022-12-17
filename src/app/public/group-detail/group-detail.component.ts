@@ -33,6 +33,12 @@ export class GroupDetailComponent implements OnInit {
     this.cs.getGroupDetails(id).then(r => this.group = r);
   }
   
+  async deleteGroup(id:number){ 
+    console.log("Contacto", id, "eliminado");
+    const grupoeliminado = await this.cs.deleteGroup(id);
+    if (grupoeliminado) this.router.navigate(['/grupo']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+    }
+
   getinitials(): string {
     return this.group.groupName
     .slice(0, 1)

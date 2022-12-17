@@ -10,7 +10,7 @@ import { ContactService } from 'src/app/core/services/contact.service';
 })
 export class CardDetailComponent implements OnInit {
 
-  constructor(private cs: ContactService, private router:Router,private route: ActivatedRoute) { }
+  constructor(private cs: ContactService, private router: Router, private route: ActivatedRoute) { }
 
 
   contact: ContactJsonPlaceHolder = {
@@ -22,9 +22,9 @@ export class CardDetailComponent implements OnInit {
     telephoneNumber: '',
     email: ''
   }
-  
+
   id: number | undefined
-  
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       console.log(params)
@@ -32,23 +32,26 @@ export class CardDetailComponent implements OnInit {
       this.getContactDetails(this.id!);
     })
   }
-  
+
   getContactDetails(id: number) {
     this.cs.getContactDetails(id).then(r => this.contact = r);
   }
   
+  async deleteContact(id: number) {
+    console.log("Contacto", id, "eliminado");
+    const contacteliminado = await this.cs.deleteContact(id);
+    if (contacteliminado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  }
+
+
   getinitials(): string {
     return this.contact.name
-    .slice(0, 1)
-    .concat(
+      .slice(0, 1)
+      .concat(
         this.contact.name.slice(
-            this.contact.name.length - 1,
-            this.contact.name.length
+          this.contact.name.length
         )
-    );
+      );
   }
-  }
-  // async getData(){
-  //   this.contactsData = await this.cs.getContacts();
-  // }
-  
+}
+

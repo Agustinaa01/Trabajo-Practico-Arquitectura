@@ -20,7 +20,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 400px;
-    height: 410px;
+    height: auto;
     background: #fff;
     border-radius: 5px;
 }
@@ -199,7 +199,7 @@
     margin: 0 0 15px;
 }
 
-@media screen and (max-width:1250px){
+@media screen and (max-width:680px){
     .agenda{
         font-size: 70px;
         display: flex;
@@ -209,5 +209,8 @@
         text-align: center;
         padding: 0 0 0px 0;
         border-bottom: 1px solid silver;
+    }
+    .formulario{
+        margin-top: 60px ;
     }
 }

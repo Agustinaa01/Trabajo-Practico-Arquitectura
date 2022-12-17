@@ -22,11 +22,7 @@ export class ContactCardComponent implements OnInit {
   email: '',
  };
  
- async deleteContact(id:number){ 
-  console.log("Contacto", id, "eliminado");
-  const contacteliminado = await this.cs.deleteContact(id);
-  if (contacteliminado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-  }
+
   // async editContacto(id:number){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
   //   console.log("contacto id: ",id," edit")
   //   const contacteditado = await this.cs.deleteContact(id);
