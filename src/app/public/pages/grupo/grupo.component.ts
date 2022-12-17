@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ContactJsonPlaceHolder } from 'src/app/core/interfaces/contacts';
 import { iGroup } from 'src/app/core/interfaces/group.interface';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { GroupService } from 'src/app/core/services/group.services';
+import { ContactCardComponent } from '../../components/contact-card.component';
 
 @Component({
   selector: 'app-grupo',
@@ -11,16 +14,21 @@ import { GroupService } from 'src/app/core/services/group.services';
 })
 export class GrupoComponent implements OnInit {
 
-  constructor(private us: GroupService) { }
-  grupos: iGroup[] = [];
+  constructor(private us: GroupService, private auth:AuthService) { }
 
+  grupos: iGroup[] = [];
+ 
   ngOnInit(): void {
     this.getData();
-    console.log(this.grupos)
   }
 
   async getData() {
-    this.grupos= await this.us.getGroups();
+    this.grupos= await this.us.getGroupsWcontacts();
     console.log(this.grupos);
+  }
+  
+  logOut(){
+    this.auth.resetSession();
+
   }
 }

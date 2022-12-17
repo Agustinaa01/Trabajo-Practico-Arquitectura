@@ -6,14 +6,165 @@ main{
     justify-content: center;
     flex: 0 1 33%;
     padding-bottom: 50px;
-    // display: flex; 
-    // height: 100%;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
+
 }
 main * {
     display: flex;
     flex-direction: column;
-    //flex: 0 1 33%;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+    overflow-y: auto;
+    width: 100%; 
+}
+nav{
+    display:flex;
+    width: 100%;
+    position: relative;
+    background:#c1c6ff;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px;
+}
+nav .nombre{
+    font-size: 35px;
+    font-weight: 800;
+    color: white;
+    cursor:pointer
+}
+
+nav ol{
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+}
+nav ol li{
+    margin: 0 2px;
+
+}
+nav ol li a{
+    background-color: #7C88FF;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 200px;
+}
+nav ol li:hover a{
+    background-color: white;
+    color: #7C88FF;
+    cursor:pointer;
+}
+nav .search-box{
+    display: flex;
+    margin: auto 0;
+    height:35px;
+    line-height: 35px;
+}
+nav .search-box input{
+    border: none;
+    outline:none;
+    background:#FFFFFF;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 350px;
+    border-radius: 30px;
+}
+nav .search-box span{
+    color:#7C88FF;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav .search-box span::after{
+    height: 100%;
+    width:100%;
+    content: "";
+    background: #7C88FF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+nav .search-box span:hover::after{
+    width: 100%;
+}
+nav .search-box span:hover{
+    color:#FFFFFF;
+}
+@media screen and (max-width:1250px){
+    nav{
+        display: block;
+        padding: 0;
+    }
+    nav .nombre{
+        display: inline-block;
+        padding: 15px 30px
+    }
+    nav .search-box{
+        width:100%;
+        display: inline-flex;
+        justify-content: center ;
+        margin-bottom: 15px;
+    }
+    nav .search-box input{
+        width: 90%;
+    }
+    nav ol{
+        display: flex;
+        flex-direction: column;
+        background-color: #c1c6ff;
+    }  
+    nav ol li{
+        text-align: center;
+    }
+    nav ol li a{
+        color:white;
+        font-size: 28px;
+        padding: 10px;
+        display:inline-table;
+        margin: 10px
+    }
+}
+
+#agregar{
+    position:fixed;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    width:-webkit-fill-available;;
+    height: 50px;
+    text-align: center;
+}
+
+#agregar :hover{
+    border: 1px solid #7C88FF;
+    transition: .5s;
+    background-color: #fff;
+    color: #7C88FF;
+    transition: 250ms;
+}
+.boton{
+    background-color: #7C88FF;
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    margin: 4px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
 }

@@ -7,11 +7,11 @@
             [(ngModel)]="groupData.groupName" #name="ngModel" [maxlength]="15">
  
             <input type="text"class="inbox"name="Description" placeholder="Descripcion"
-            [(ngModel)]="groupData.description" #descripcion="ngModel" [maxlength]="15">
+            [(ngModel)]="groupData.description" #descripcion="ngModel" [maxlength]="30">
 
             <div class="botones">
                 <button class= "submit" type="submit">Aceptar</button>
-                <button class= "submit" type="submit">Cancelar</button>
+                <button class="submit" [routerLink] = "['/grupo']">Cancelar</button>
             </div>
         </form>
     </div>

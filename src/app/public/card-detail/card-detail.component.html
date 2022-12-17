@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="letras-container">
+      <div class="letras">
+        {{getinitials() | uppercase}}
+      </div>
+    </div>
+
+<div class="nombre"><h1>{{contact.name}} {{contact.lastName}}</h1></div></div> 
+
+<div class="card">
+    <div class="title">
+    <div class="texto"><h2>Informacion de contacto</h2>
+        <a [routerLink]="['/edit-contact', contact.id]"><img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="edit"></a>
+        <a [routerLink]="['/choosegroup', contact.id]"><img src="https://cdn-icons-png.flaticon.com/512/47/47768.png" alt="grupo"></a>
+      </div> 
+    </div>
+    <div class="info">
+        <div class="alias">Alias: {{contact.alias}}</div>
+    <div class="mas">Numero: {{contact.celularNumber}}</div>
+    <div class="mas">Telefono: {{contact.telephoneNumber}}</div>
+    <div class="mas">Email:{{contact.email}}</div>
+    
+    </div>
+</div>

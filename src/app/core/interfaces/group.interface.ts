@@ -4,7 +4,7 @@ export interface iGroup{
   id: number;
   groupName:string;
   description:string;
-  contacts: ContactJsonPlaceHolder;
+  contacts: ContactJsonPlaceHolder[];
 }
 export interface iGroupandContact{
   groupId: number;
@@ -14,5 +14,9 @@ export interface iCreateGroup{
   groupName: string;
   description: string;
 }
-
+// export interface iGetGroups{
+//   id: number;
+//   groupName:string;
+//   description:string;
+// }
 

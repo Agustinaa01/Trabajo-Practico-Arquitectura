@@ -1,3 +1,27 @@
+
+<nav>
+     <div class="nombre"><h1>Agenda de Contactos</h1></div>
+     <div class="search-box">
+        <input type="search" placeholder="Buscar">
+     </div>
+     <ol>
+        <li><a (click)="logOut()">Cerrar Sesion</a></li>    
+    </ol>
+</nav>
+
 <main>
-    <app-group-card *ngFor="let grupo of grupos" [groups]="grupo"></app-group-card>
+<app-group-card *ngFor="let grupo of grupos" [groups]="grupo"></app-group-card>
 </main>
+
+<div id="agregar"><button [routerLink] = "['/creategroup']" class="boton" type="button">Crear Grupo</button></div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,31 +1,39 @@
-<body> 
-    <div id = "agregar">
-        <h5>Editar Contacto</h5>
-        <form (ngSubmit)="editcontact(form)" #form="ngForm" id="agregar-form">
-            <input type="text" id="nombre" name="Name" placeholder="Nombre" required=""
-            [(ngModel)]="contactEdit.name" #name="ngModel" [maxlength]="15">
- 
-            <input type="text" id="apellido" name="LastName" placeholder="Apellido"
-            [(ngModel)]="contactEdit.lastName" #lastname="ngModel" [maxlength]="15">
-
-            <input type="text" id="alias" name="Alias" placeholder="Alias"
-            [(ngModel)]="contactEdit.alias" #alias="ngModel" [maxlength]="15">
-
-            <input type="text" id="celular" name="CelularNumber" placeholder="Celular" required
-            [(ngModel)]="contactEdit.celularNumber" #celular="ngModel" [maxlength]="15">
+<body>
+<div class="main">
+        <div class="edit-box">
+            <h1><strong>Editar Contacto</strong></h1>
+    
+        <form #editForm="ngForm" (ngSubmit)="editForm.valid && editContact(editForm)">
+          <input type="text" value="{{id}}" [hidden]="true" name="id" [(ngModel)]="contact.id" #id="ngModel">
             
-            <input type="text" id="telefono" name="TelephoneNumber" placeholder="Telefono" required
-            [(ngModel)]="contactEdit.telephoneNumber" #telefono="ngModel" [maxlength]="15">
+        <label class="name" for="name">Nombre</label>
+        <input value="{{contact.name}}" type="text" name="name" id="name" placeholder="Nombre" [(ngModel)]="contact.name" #name="ngModel"/>
+        
+        <label class="lastName" for="lastName">Apellido</label>
+        <input value="{{contact.lastName}}" type="text" name="lastName" id="lastName" placeholder="Apellido" [(ngModel)]="contact.lastName" #lastName="ngModel"/>
+        
+        <label class="alias" for="alias">Alias</label>
+        <input type="text" name="alias" id="alias" placeholder="Alias" [(ngModel)]="contact.alias" #alias="ngModel"/>
+    
+    
+        <label class="celularNumber" for="celularNumber">Numero de celular</label>
+        <input value="{{contact.celularNumber}}" type="celularNumber" name="celularNumber" id="celularNumber" placeholder="Numero de celular"  [(ngModel)]="contact.celularNumber" #celularNumber="ngModel"/>
+    
+    
+        <label class="telephoneNumber" for="telephoneNumber">Numero de telefono</label>
+        <input type="telephoneNumber" name="telephoneNumber" id="telephoneNumber" placeholder="Numero de telefono" [(ngModel)]="contact.telephoneNumber" #telephoneNumer="ngModel"/>
+        
+        <label class="email" for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email" [(ngModel)]="contact.email" #email="ngModel"/>
+    
 
-            <input type="text" id="email" name="Email" placeholder="Email"
-            [(ngModel)]="contactEdit.email" #mail="ngModel" [maxlength]="30">
-
-            <p class="botones">
-                <button class="submit" type="submit">Editar Contacto</button>
-                <button class="submit"type="submit">Cancelar</button>
-            </p>
-        </form>
+    <div class="btn-container">
+        <button class="btn-edit" type="submit" value="edit">Editar</button>
+        <button class="btn-edit" [routerLink]="['/contacts']">Cancelar</button>
     </div>
+    
+    </form>
+    </div>
+</div>
 </body>
-<body> 
 

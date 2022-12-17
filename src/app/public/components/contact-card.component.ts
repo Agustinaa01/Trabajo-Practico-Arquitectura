@@ -12,7 +12,6 @@ import { ContactsComponent } from '../pages/contacts/contacts.component';
 export class ContactCardComponent implements OnInit {
   constructor(private cs: ContactService, private router:Router) { }
 
-  //@Input() contact: Contact = defaultContact
  @Input() contacto: ContactJsonPlaceHolder = {
   id:0,
   name: '',
@@ -22,12 +21,17 @@ export class ContactCardComponent implements OnInit {
   telephoneNumber: '',
   email: '',
  };
+ 
  async deleteContact(id:number){ 
   console.log("Contacto", id, "eliminado");
   const contacteliminado = await this.cs.deleteContact(id);
   if (contacteliminado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
   }
-
+  // async editContacto(id:number){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
+  //   console.log("contacto id: ",id," edit")
+  //   const contacteditado = await this.cs.deleteContact(id);
+  //   if (contacteditado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)//cambia el valor de abrirContactEdit en el contact component por 1 para q se cierre las contact-card y se abra el edit-form
+  // }
   // async editContacto(){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
   //   console.log("contacto editado")
   //   const contacteditado = await this.cs.editContact();

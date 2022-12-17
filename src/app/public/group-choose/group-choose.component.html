@@ -1,0 +1,5 @@
+<div class="container">
+    <input checked="checked" type="radio" name="user_level" id="rd1" value="1" />
+    <label for="rd1">{{groups.groupName}} ({{groups.description}})</label><br/>
+    <label *ngFor="let contactos of groups.contacts">{{contactos.name}}</label>
+</div>
