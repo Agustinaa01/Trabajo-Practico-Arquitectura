@@ -14,9 +14,9 @@ export interface iCreateGroup{
   groupName: string;
   description: string;
 }
-export interface iChooseGroup{
-  id: number;
-  groupName:string;
-  description:string;
-}
+// export interface iGetGroups{
+//   id: number;
+//   groupName:string;
+//   description:string;
+// }
 

@@ -23,7 +23,7 @@ export class GrupoComponent implements OnInit {
   }
 
   async getData() {
-    this.grupos= await this.us.getGroups();
+    this.grupos= await this.us.getGroupsWcontacts();
     console.log(this.grupos);
   }
   

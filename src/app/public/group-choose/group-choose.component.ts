@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { iChooseGroup } from 'src/app/core/interfaces/group.interface';
+import { iGroup } from 'src/app/core/interfaces/group.interface';
 
 @Component({
   selector: 'app-group-choose',
@@ -7,11 +7,8 @@ import { iChooseGroup } from 'src/app/core/interfaces/group.interface';
   styleUrls: ['./group-choose.component.scss']
 })
 export class GroupChooseComponent implements OnInit {
-  
-  @Input() groups:iChooseGroup = {} as iChooseGroup;
-  
+  @Input() groups:iGroup = {} as iGroup;
   constructor() { }
-
   ngOnInit(): void {
   }
 

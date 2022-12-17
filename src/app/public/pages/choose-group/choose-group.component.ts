@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { iChooseGroup, iGroup, iGroupandContact } from 'src/app/core/interfaces/group.interface';
+import { iGroup } from 'src/app/core/interfaces/group.interface';
+
 import { GroupService } from 'src/app/core/services/group.services';
 
 @Component({
@@ -13,38 +14,29 @@ export class ChooseGroupComponent implements OnInit {
     
   constructor(private cs:GroupService, private router:Router,private route: ActivatedRoute) { }
 
-  groupData:iChooseGroup = {
+  groupData:iGroup = {
     id: 0,
     groupName: '',
-    description: ''
+    description: '',
+    contacts: []
   };
 
-  grupos: iChooseGroup[] = [];
-  id: number | undefined
+  grupos: iGroup[] = [];
+  
 
   ngOnInit(): void {
     this.getData();
-    this.route.params.subscribe(params => {
-      console.log(params)
-      this.id = params['id'];
-      this.cs.getGroupDetails(this.id!).then(r => this.groupData= r);
-    })
   }
-
+  
   async getData() {
-    this.grupos = await this.cs.getGroups();
+    this.grupos = await this.cs.getGroupsNames();
     console.log(this.grupos);
-  }
-  contact: iGroupandContact = {
-    groupId: 0,
-    contactId: 0
+    
   }
   
-  isSubmitted = false;
-  
-  async submitForm(form : NgForm): Promise<void> {
-    if (form.errors !== null) return
-    const res  = await this.cs.addtogroup(form.value)
-    this.router.navigate(["/contacts"]);
+  async addToGroup(form:NgForm){ 
+    console.log(form.value);
+    const contactcreado = await this.cs.addtogroup(form.value);
+    if (contactcreado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+    }
   }
-}

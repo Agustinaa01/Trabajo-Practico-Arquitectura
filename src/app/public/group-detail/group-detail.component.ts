@@ -32,6 +32,7 @@ export class GroupDetailComponent implements OnInit {
   getGroupDetails(id: number) {
     this.cs.getGroupDetails(id).then(r => this.group = r);
   }
+  
   getinitials(): string {
     return this.group.groupName
     .slice(0, 1)
