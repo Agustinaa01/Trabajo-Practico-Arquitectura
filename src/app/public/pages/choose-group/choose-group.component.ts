@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { iGroup, iGroupandContact } from 'src/app/core/interfaces/group.interface';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { iChooseGroup, iGroup, iGroupandContact } from 'src/app/core/interfaces/group.interface';
 import { GroupService } from 'src/app/core/services/group.services';
 
 @Component({
@@ -9,41 +10,41 @@ import { GroupService } from 'src/app/core/services/group.services';
   styleUrls: ['./choose-group.component.scss']
 })
 export class ChooseGroupComponent implements OnInit {
-  
+    
+  constructor(private cs:GroupService, private router:Router,private route: ActivatedRoute) { }
 
-  
-  constructor(private cs:GroupService, private router:Router) { }
-
-  groupData:iGroupandContact = {
-    groupId: 0,
-    contactId: 0
+  groupData:iChooseGroup = {
+    id: 0,
+    groupName: '',
+    description: ''
   };
 
-  // async group(form:NgForm){ 
-  // console.log(form.value);
-  // const grupocreado = await this.cs.createGroup(form.value);
-  // if (grupocreado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-  // } // contactosFalsos = contactos
-  
-  
-  grupo:iGroupandContact[] = [];
-  
+  grupos: iChooseGroup[] = [];
+  id: number | undefined
+
   ngOnInit(): void {
-    this.getData()
+    this.getData();
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.id = params['id'];
+      this.cs.getGroupDetails(this.id!).then(r => this.groupData= r);
+    })
   }
 
-  async getData(){
-    const grupo = {
-      groupId: 1,
-      contactId: 2,
-    };
-
-    try{
-      this.grupo = await this.cs.getGroupstoAdd();
-    }
-    catch(err) {
-      this.grupo = [grupo];
-    }
-    console.log(this.grupo)
-  };
+  async getData() {
+    this.grupos = await this.cs.getGroups();
+    console.log(this.grupos);
+  }
+  contact: iGroupandContact = {
+    groupId: 0,
+    contactId: 0
+  }
+  
+  isSubmitted = false;
+  
+  async submitForm(form : NgForm): Promise<void> {
+    if (form.errors !== null) return
+    const res  = await this.cs.addtogroup(form.value)
+    this.router.navigate(["/contacts"]);
+  }
 }

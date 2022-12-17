@@ -13,42 +13,8 @@ import { ContactsComponent } from '../contacts/contacts.component';
 })
 export class EditcontactComponent implements OnInit {
 
+constructor(private cs:ContactService, private router:Router,private route: ActivatedRoute ) { }
 
-  constructor(private cs:ContactService, private router:Router,private route: ActivatedRoute ) { }
-
-//   contactEdit:ContactJsonPlaceHolder={
-//     name: '',
-//     alias: '',
-//     lastName: '',
-//     celularNumber: '',
-//     email: '',
-//     telephoneNumber: '',
-//     id: 0
-//   }
-
-//   async getContacto(id:number){  //recibe el id de un contacto
-//     const contacto = this.cs.getContactDetails(id); //trae un objeto contacto con todos sus datos
-//     return await contacto
-//   }
-//   async contactForEdit(id: number){
-//     const contactForEdit = this.getContacto(id)  //ejecuta getContacto() con el id del contacto que va a ser editado
-
-//     this.contactEdit.id = (await contactForEdit).id;           //reemplaza todos los valores del contactForeditData con los del contacto buscado
-//     this.contactEdit.name = (await contactForEdit).name,   //para que cuando se abra el form aparezcan todos los datos actuales del contacto
-//     this.contactEdit.lastName = (await contactForEdit).lastName,
-//     this.contactEdit.alias = (await contactForEdit).alias,
-//     this.contactEdit.email = (await contactForEdit).email,
-//     this.contactEdit.celularNumber = (await contactForEdit).celularNumber,
-//     this.contactEdit.telephoneNumber = (await contactForEdit).telephoneNumber
-//   }
-
-//   async editcontact(id:number,form:NgForm){
-//     console.log(form.value);
-//     const contacteditado = await this.cs.editContact(id,form.value); 
-//     if (contacteditado) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)//cambia el valor de abrirContactEdit en el contact component por 1 para q se cierre las contact-card y se abra el edit-form
-//   }
-
-// }
 
 id: number | undefined
 
@@ -59,8 +25,6 @@ ngOnInit(): void {
     this.cs.getContactDetails(this.id!).then(r => this.contact = r);
   })
 }
-
-
 
 contact: ContactJsonPlaceHolder = {
   id: 0,

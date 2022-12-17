@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { GrupoComponent } from './grupo.component';
 import { GroupCardComponent } from '../../group-card/group-card.component';
 import { CardDetailComponent } from '../../card-detail/card-detail.component';
+import { ContactCardComponent } from '../../components/contact-card.component';
 
 
 @NgModule({

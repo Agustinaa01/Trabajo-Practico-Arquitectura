@@ -10,8 +10,28 @@ import { AuthService } from './auth.service';
 export class GroupService {
   constructor(private auth:AuthService) {}
 
+  async getGroupDetails(id: number): Promise<iGroup> {
+    const data = await fetch(BACKEND_URL+'/api/Group/'+ id,{
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` 
+      },
+    });
+    return await data.json();
+  }
   async getGroups(): Promise<iGroup[]> {
     const data = await fetch(BACKEND_URL+'/api/Group',{
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` 
+      },
+    });
+    return await data.json();
+  }
+  async getGroupsNames(): Promise<iGroup[]> {
+    const data = await fetch(BACKEND_URL+'/api/Group/groupName',{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

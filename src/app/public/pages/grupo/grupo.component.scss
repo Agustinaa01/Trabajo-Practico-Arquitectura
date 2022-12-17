@@ -6,12 +6,13 @@ main{
     justify-content: center;
     flex: 0 1 33%;
     padding-bottom: 50px;
+
 }
 main * {
     display: flex;
     flex-direction: column;
-    //flex: 0 1 33%;
 }
+
 *{
     margin:0;
     padding:0;
@@ -139,4 +140,31 @@ nav .search-box span:hover{
         display:inline-table;
         margin: 10px
     }
+}
+
+#agregar{
+    position:fixed;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    width:-webkit-fill-available;;
+    height: 50px;
+    text-align: center;
+}
+
+#agregar :hover{
+    border: 1px solid #7C88FF;
+    transition: .5s;
+    background-color: #fff;
+    color: #7C88FF;
+    transition: 250ms;
+}
+.boton{
+    background-color: #7C88FF;
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    margin: 4px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
 }

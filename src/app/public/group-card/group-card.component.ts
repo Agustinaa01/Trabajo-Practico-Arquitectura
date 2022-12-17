@@ -13,9 +13,9 @@ import { GroupService } from 'src/app/core/services/group.services';
 export class GroupCardComponent implements OnInit {
 
   constructor(private cs: GroupService, private router:Router,private auth:AuthService) { }
-  contactos: ContactJsonPlaceHolder[] = [];
+
   ngOnInit(): void {
-    console.log(this.groups)
+
   }
   @Input() groups:iGroup = {} as iGroup;
 

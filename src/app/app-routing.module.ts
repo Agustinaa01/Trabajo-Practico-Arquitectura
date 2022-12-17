@@ -53,6 +53,20 @@ const routes: Routes = [
       ),
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {
+    path: 'grupo/:id',
+    loadChildren: () =>
+      import('./public/group-detail/group-detail.module').then(
+        (m) => m.GroupDetailModule
+      )
+  }, {
+  path: 'choosegroup/:id',
+  loadChildren: () =>
+    import('./public/pages/choose-group/choose-group.module').then(
+      (m) => m.ChooseGroupModule
+    ),
+},
+{ path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 

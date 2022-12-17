@@ -17,16 +17,16 @@ export class GrupoComponent implements OnInit {
   constructor(private us: GroupService, private auth:AuthService) { }
 
   grupos: iGroup[] = [];
-
+ 
   ngOnInit(): void {
     this.getData();
-    console.log(this.grupos)
   }
 
   async getData() {
     this.grupos= await this.us.getGroups();
     console.log(this.grupos);
   }
+  
   logOut(){
     this.auth.resetSession();
 
