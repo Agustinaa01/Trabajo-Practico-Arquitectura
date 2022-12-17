@@ -1,10 +1,9 @@
 
     <div class="card-content">
         <div class="info">
-        
-            <span class="name"> Nombre: {{contacto.name}}, {{contacto.lastName}}</span>
+            <span class="name">{{contacto.name}}, {{contacto.lastName}}</span>
             <span class="phone"> Celular: {{contacto.celularNumber}}</span>
-            <span [routerLink]="['/contacts', contacto.id]" class="mas">Ver mas...</span>
+            <span [routerLink]="['/contacts', contacto.id]" class="vm">Ver mas...</span>
         </div>
 
 

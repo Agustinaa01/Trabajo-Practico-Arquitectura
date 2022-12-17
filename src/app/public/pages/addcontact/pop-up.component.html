@@ -16,15 +16,15 @@
             <input type="text" id="alias" name="Alias" placeholder="Alias"
             [(ngModel)]="contactData.alias" #alias="ngModel" [maxlength]="10">
                 
-            <input type="text" id="celular" name="CelularNumber" placeholder="Celular" required
-            [(ngModel)]="contactData.celularNumber" #celular="ngModel" [maxlength]="10">
+            <input type="tel" id="celular" name="CelularNumber" placeholder="Celular" required
+            [(ngModel)]="contactData.celularNumber" #celular="ngModel" [maxlength]="10" pattern="[0-9]" >
             <span class="none" *ngIf=" (celular.touched || form.submitted) && celular.errors?.['required']">Numero de ceulular obligatorio.</span>
 
-            <input type="text" id="telefono" name="TelephoneNumber" placeholder="Telefono"
-            [(ngModel)]="contactData.telephoneNumber" #telefono="ngModel" [maxlength]="6">
+            <input type="tel" id="telefono" name="TelephoneNumber" placeholder="Telefono"
+            [(ngModel)]="contactData.telephoneNumber" #telefono="ngModel" [maxlength]="6" pattern="[0-9]">
 
-            <input type="text" id="email" name="Email" placeholder="Email"
-            [(ngModel)]="contactData.email" #mail="ngModel" [maxlength]="30">
+            <input type="email" id="email" name="Email" placeholder="Email"
+            [(ngModel)]="contactData.email" #mail="ngModel" [maxlength]="30" >
 
             <p class="btn-container">
                 <button class="btn-edit" type="submit">Agregar Contacto</button>
