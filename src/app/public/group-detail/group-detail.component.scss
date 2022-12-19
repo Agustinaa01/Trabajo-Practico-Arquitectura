@@ -1,18 +1,9 @@
-.texto{
-    display: flex;
-    flex-direction: row;
-  }
-.texto img{
-    width: 30px;
-    height: 30px;
-}
-
 .letras-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 170px;
 }
   
 .letras{
@@ -24,71 +15,97 @@
     border-radius: 50%;
     height: 80px;
     width: 80px;
-    font-size: 30px;
+    font-size: 37px;
+    margin-bottom: 10px;
 }
 
-.title{
-    display:flex;
-    flex-direction: row;
-}
 .card{
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #EFEFF0;
     width: 470px;
-    height: 270px;
+    height: auto;
     border-radius: 20px;
     color: black;
     margin: auto;
     padding:0;
 }
-  
-.texto{
+.top{
     display: flex;
-    justify-content: center;
-    text-align: center;
-    font-weight: 600;
-    font-size: 25px;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding:0px;
+    flex-direction: row;
     border-bottom: 1px solid silver;
+    justify-content: center;
 }
-  
+
+
+h2{
+    margin-left: 10px;
+    font-size: 30px;
+}
+.eliminar{
+    height: 27px;
+    width: 27px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
 .nombre{
     color: black;
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: auto;
     font-weight: 400;
-    font-size: 30px;
-    margin-top: 10px;
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
+.alias{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+    opacity: 0.7;
+}  
 .info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding:20px;
+    align-items: center;
+    padding: 10px;
 }
 
 .mas{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
     font-size: 20px;
+    margin-bottom: 5px;
     border-bottom: 1px solid silver;
 }
 label{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     font-size: 20px;
     margin-bottom: 10px;
+
 }
 .for{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
+
+.mas{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+
+

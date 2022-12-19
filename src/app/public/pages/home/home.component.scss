@@ -1,13 +1,9 @@
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #E3E5F9;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw; 
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center ;
+    justify-content: center center;
+    margin-top: 190px;
 }
 
 h1{
@@ -26,10 +22,11 @@ h1{
     background-color: #7C88FF;
     font-size: 50px;
     color: #ECF4F7;
-    border-radius: 30px;
+    border-radius: 20px;
     cursor: pointer;
     margin: 0.2em;
     border:none;
+    padding: 15px 30px
 }
 
 .submit:hover{
@@ -38,7 +35,7 @@ h1{
     transition: 100ms; 
 }
 
-@media screen and (max-width:1250px){
+@media screen and (max-width:800px){
     .ir{
         display: block;
         padding:0
@@ -61,14 +58,9 @@ h1{
         flex-direction: column;
     } 
     #inicio h1{
-        color:black;
         font-size: 50px;
-        padding: 10px;
         align-items: center;
-        display:inline-table;
-        margin: 10px;
-        width:100%;
-        display: inline-flex;
-        justify-content: center center;
+        display:flex;
+        justify-content: center;
     }
 }

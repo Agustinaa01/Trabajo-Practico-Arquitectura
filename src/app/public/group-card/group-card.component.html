@@ -1,18 +1,7 @@
 <div class="card-content">
     <div class="info">
-        <span class="name">Nombre del grupo: {{groups.groupName}}</span>
-        <span [routerLink]="['/grupo', groups.id]" class="mas">Ver mas...</span>
-    </div>
-    <!-- <p *ngfor="let contact of groups.contacts">Contactos: </p> -->
-
-    <div class="interaction">
-        <a href="/grupo#open-modal"><input class="eliminar" type="image"
-                src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" (click)="deleteGroup(groups.id!)"></a>
-        <div id="open-modal" class="modal-window">
-            <div>
-                <a href="/grupo#modal-close" title="Close" class="modal-close">close &times;</a>
-                <div>Grupo eliminado exitosamente!</div>
-            </div>
-        </div>
+        <span class="name"> {{groups.groupName}}</span>
+        <div class="mas">Descripcion: {{groups.description}}</div>
+        <span [routerLink]="['/grupo', groups.id]" class="vm">Ver mas...</span>
     </div>
 </div>

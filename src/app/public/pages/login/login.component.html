@@ -9,15 +9,17 @@
       <div class="username">
         <input type="text" name="UserName" placeholder="Nombre de Usuario"
         [(ngModel)]="authData.UserName" [required]="true" #userName="ngModel">
-    </div>
+        <span class="none" *ngIf=" (userName.touched || form.submitted) && userName.errors?.['required']">Usuario obligatorio.</span>
+
+      </div>
     
     <div class="contraseña">
       <input type="password" name="Password" autocomplete="current-password" placeholder="Contraseña"
-        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel">
-    </div>
+        [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel">       
+        <span class="none" *ngIf=" password.touched && password.errors"> La contraseña debe tener al menos 6 caracteres.</span>
+      </div>
     <div class="recordar">Olvide mi contraseña</div>
-    
-    <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
-      <button class= "submit" type="submit">Iniciar Sesion</button>
+  
+    <button class= "submit" type="submit" [disabled]="!form.valid">Iniciar Sesion</button>
   </form>
 </div>

@@ -19,10 +19,5 @@ export class GroupCardComponent implements OnInit {
   }
   @Input() groups:iGroup = {} as iGroup;
 
-  async deleteGroup(id:number){ 
-    console.log("Contacto", id, "eliminado");
-    const grupoeliminado = await this.cs.deleteGroup(id);
-    if (grupoeliminado) this.router.navigate(['/grupo']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-    }
 
 }

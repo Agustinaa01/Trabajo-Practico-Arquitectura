@@ -40,7 +40,7 @@ isEdit: boolean = false;
 
 async editContact(editForm : NgForm): Promise<void> {
   if (editForm.errors !== null) return
-  const res  = await this.cs.editContact(editForm.value)
+  await this.cs.editContact(editForm.value)
   this.router.navigate(["/contacts"]);
 }
 

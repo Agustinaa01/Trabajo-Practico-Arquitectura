@@ -10,17 +10,14 @@
     border-bottom: 1px solid silver;
 }
 
-.error{
-    font-size: 15px;
-    padding:2px;
-}
 .formulario{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 400px;
-    height: 410px;
+    height: auto;
+    margin-top: 30px;
     background: #fff;
     border-radius: 5px;
 }
@@ -35,6 +32,7 @@
 }
 .formulario .username{
     position: relative;
+    border-bottom: 2px solid #E3E5F9;
     margin: 30px 0;
 }
 .username input{
@@ -65,16 +63,6 @@
     height: 2px;
     background: #000;
 }
-
-// .username input:focus ~ label,
-// .username input:focus ~ label{
-//     top: -5px;
-//     color: #000;
-// }
-// .username input:focus ~ span::before,
-// .username input:focus ~ span::before{
-//     width: 100%;
-// }
 
 
 .formulario .contraseña{
@@ -136,6 +124,7 @@
     border-radius: 25px;
     cursor: pointer;
     outline: none;
+    margin-bottom: 15px;
 }
 .submit:hover{
     border-color: #fff;
@@ -145,61 +134,7 @@
     transition: 250ms;
 }
 
-.modal-window {
-    position: fixed;
-    // background-color: rgba(200, 200, 200, 0.75);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
-  
-.modal-window:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-  
-.modal-window > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 2rem;
-    background: #c1c6ff;
-    color: white;
-}
-  
-.modal-window header {
-    font-weight: bold;
-}
-  
-.modal-close {
-    color: #aaa;
-    line-height: 50px;
-    font-size: 80%;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 70px;
-    text-decoration: none;
-}
-  
-.modal-close:hover {
-    color: white;
-}
-  
-.modal-window h1 {
-    font-size: 150%;
-    margin: 0 0 15px;
-}
-
-@media screen and (max-width:1250px){
+@media screen and (max-width:680px){
     .agenda{
         font-size: 70px;
         display: flex;
@@ -209,5 +144,8 @@
         text-align: center;
         padding: 0 0 0px 0;
         border-bottom: 1px solid silver;
+    }
+    .formulario{
+        margin-top: 60px ;
     }
 }

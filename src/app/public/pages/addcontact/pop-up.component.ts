@@ -24,6 +24,7 @@ export class PopUpComponent implements OnInit {
   };
   ngOnInit(): void {
   }
+  
   async newcontact(form:NgForm){ 
   console.log(form.value);
   const contactcreado = await this.cs.addContact(form.value);

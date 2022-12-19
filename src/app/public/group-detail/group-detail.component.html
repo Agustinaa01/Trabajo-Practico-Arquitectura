@@ -1,23 +1,24 @@
-<div class="main">
-    <div class="letras-container">
-      <div class="letras">
+
+<div class="letras-container">
+    <div class="letras">
         {{getinitials() | uppercase}}
-      </div>
     </div>
-
-<div class="title">
-    <div class="nombre"><strong>{{group.groupName}}</strong></div>
+    <div class="title">
+        <div class="nombre"><strong>{{group.groupName}}</strong></div>
+    </div>
 </div>
-    <div class="card">
 
-        <div class="texto">
-            <h2>Informacion del grupo</h2>
-        </div>
 
-        <div class="info">
-            <div class="mas">Descripcion: {{group.description}}</div>
-            <label><strong>Contactos: </strong></label>
-            <div class="for" *ngFor="let contactos of group.contacts">Nombre: {{contactos?.name}},
-                {{contactos.lastName}}</div>
-        </div>
+<div class="card">
+    <div class="top">
+    <h2>Informacion del grupo</h2>
+    <input class="eliminar" type="image" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png"
+        (click)="deleteGroup(group.id!)">
     </div>
+
+<div class="info">
+    <div class="mas">Descripcion: {{group.description}}</div>
+    <label><strong>Contactos: </strong></label>
+    <div class="for" *ngFor="let contactos of group.contacts">Nombre: {{contactos?.name}}, {{contactos.lastName}}</div>
+</div>
+</div>

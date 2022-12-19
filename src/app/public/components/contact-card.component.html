@@ -1,22 +1,9 @@
-<body>
+
     <div class="card-content">
         <div class="info">
-        
-            <span class="name"> Nombre: {{contacto.name}}, {{contacto.lastName}}</span>
+            <span class="name">{{contacto.name}}, {{contacto.lastName}}</span>
             <span class="phone"> Celular: {{contacto.celularNumber}}</span>
-            <span [routerLink]="['/contacts', contacto.id]" class="mas">Ver mas...</span>
+            <span [routerLink]="['/contacts', contacto.id]" class="vm">Ver mas...</span>
         </div>
 
-<div class="interaction">
-    
-    <a href="/contacts#open-modal"><input class="eliminar" type="image" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" (click)="deleteContact(contacto.id!)"></a>
-        <div id="open-modal" class="modal-window">
-        <div>
-            <a href="/contacts#modal-close" title="Close" class="modal-close">close &times;</a>
-            <div>Contacto eliminado exitosamente!</div>
-          </div>
-        </div>
-    </div>
-</div>
-</body>
 
