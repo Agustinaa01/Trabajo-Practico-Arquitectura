@@ -16,10 +16,10 @@
     <div class="contraseña">
       <input type="password" name="Password" autocomplete="current-password" placeholder="Contraseña"
         [(ngModel)]="authData.Password" [required]="true" [minlength]="6" #password="ngModel">       
-        <span class="none" *ngIf=" (password.touched || form.submitted) && password.errors?.['required']"> La contraseña debe tener al menos 6 caracteres.</span>
+        <span class="none" *ngIf=" password.touched && password.errors"> La contraseña debe tener al menos 6 caracteres.</span>
       </div>
     <div class="recordar">Olvide mi contraseña</div>
-    
-      <button class= "submit" type="submit">Iniciar Sesion</button>
+  
+    <button class= "submit" type="submit" [disabled]="!form.valid">Iniciar Sesion</button>
   </form>
 </div>

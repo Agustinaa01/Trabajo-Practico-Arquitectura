@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./public/pages/create-group/create-group.module').then(m => m.CreateGroupModule)
   },
   {
-    path: 'choosegroup',
-    loadChildren: () => import('./public/pages/choose-group/choose-group.module').then(m => m.ChooseGroupModule)
-  },
-  {
     path: 'contacts/:id',
     loadChildren: () =>
       import('./public/card-detail/card-detail.module').then(

@@ -7,23 +7,23 @@
     <form (ngSubmit)="register(form)" #form="ngForm">
     
       <div class="username">
-      <!-- <label for="username">Nombre de Usuario</label> -->
-      <input type="userName" name="userName" placeholder="Nombre"
+      <input type="text" id="username" name="userName" placeholder="Nombre"
        [(ngModel)]="authData.userName" [required]="true" #userName="ngModel">
-       <span class="none" *ngIf=" (userName.touched || form.submitted) && userName.errors?.['required']">Nombre obligatorio.</span>
+       <span *ngIf=" (userName.touched || form.submitted) && userName.errors?.['required']">Nombre obligatorio.</span>
+      </div>
        
     <div class="email">
       <input type="text" id="email" name="email" placeholder="Email"
-      [(ngModel)]="authData.email"   #mail="ngModel" [maxlength]="30">
+      [(ngModel)]="authData.email"  #mail="ngModel" [maxlength]="30">
     </div>
   
     <div class="contraseña">
       <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
       [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel">
-      <span class="none" *ngIf=" (password.touched || form.submitted) && password.errors?.['required']">La contraseña debe tener al menos 6 caracteres.</span>
+      <span  *ngIf=" password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</span>
     </div>
 
       <button class= "submit" type="submit">Registrarse</button>
-    </div>
+
   </form>
 </div>

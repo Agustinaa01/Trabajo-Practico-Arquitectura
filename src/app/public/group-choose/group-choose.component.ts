@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { iGroup } from 'src/app/core/interfaces/group.interface';
 
 @Component({
@@ -11,5 +11,10 @@ export class GroupChooseComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
+  @Output() valor:EventEmitter<number> = new EventEmitter<number>()
 
+  
+  cambiarvalor(valor:number){
+    this.valor.next(valor)
+  }
 }

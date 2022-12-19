@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
     ChooseGroupComponent,
     GroupChooseComponent,
   ],
+  exports:[
+    ChooseGroupComponent,
+  ],
   imports: [
     CommonModule,
     ChooseGroupRoutingModule,
