@@ -1,29 +1,30 @@
-<!-- <img id="arrow_back" routerLink="/" src="./assets/images/arrow_back.png" alt="arrow_back"> -->
-  <div class = "agenda"><strong>Agenda de Contactos</strong></div>
-  
-  <div class="formulario">
-  <h1>Registro de Usuario</h1>
-  
-    <form (ngSubmit)="register(form)" #form="ngForm">
-    
-      <div class="username">
-      <input type="text" id="username" name="userName" placeholder="Nombre"
-       [(ngModel)]="authData.userName" [required]="true" #userName="ngModel">
-       <span *ngIf=" (userName.touched || form.submitted) && userName.errors?.['required']">Nombre obligatorio.</span>
+<body>
+  <nav>
+       <div class="nombre">
+          <h1>Agenda de Contactos</h1>
+          <img src="https://www.nicepng.com/png/full/115-1153942_white-home-icon-png-white-home-logo-transparent.png">
       </div>
-       
-    <div class="email">
-      <input type="text" id="email" name="email" placeholder="Email"
-      [(ngModel)]="authData.email"  #mail="ngModel" [maxlength]="30">
-    </div>
+       <div class="search-box">
+          <input type="search" placeholder="Buscar">
+       </div>
+       <ol>
+          <li><a >Cerrar Sesion</a></li>    
+      </ol>
+  </nav>
+
+<main>
   
-    <div class="contraseña">
-      <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
-      [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel">
-      <span  *ngIf=" password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</span>
+  <div class="card-content">
+    <div class="info">
+        <span class="name">Lucas Jarez</span>
+        <span class="phone"> Celular: 341546897</span>
     </div>
-
-      <button class= "submit" type="submit">Registrarse</button>
-
-  </form>
 </div>
+</main>
+<footer>
+  <div id="agregar">
+      <button class="boton" type="button">Agregar Contacto</button>
+      <button class="boton" type="button">Ver Grupos</button>
+  </div>
+</footer>
+</body>
