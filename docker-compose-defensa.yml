@@ -2,7 +2,7 @@ version: "3.3"
 services:
   web:
    container_name: tp-cont-comp
-   image: tp-img
+   image: agustina01/trabajo-practico-integrador 
    build: .
    ports:
      - "8081:80"
